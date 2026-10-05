@@ -53,7 +53,6 @@ export const idDictionary: Dictionary = {
     aboutHeadingAccent: 'Perjalanan Bisnis Anda',
     aboutSummary:
       '3.SEC Business, Tax & Digital Solution adalah firma penasihat dan konsultasi yang berdedikasi menghadirkan solusi akuntansi, perpajakan, payroll, dan solusi digital yang terstruktur, praktis, dan disesuaikan dengan kebutuhan Anda. Kami memadukan profesionalisme, inovasi teknologi, dan pendekatan personal untuk mendorong pertumbuhan bisnis yang berkelanjutan.',
-    aboutScriptBadge: 'Small Steps, Big Results',
     aboutMetrics: [
       { value: '7+', label: 'Tahun Pengalaman' },
       { value: '100%', label: 'Kepuasan Klien' },
@@ -150,7 +149,7 @@ export const idDictionary: Dictionary = {
       {
         id: 'review-5',
         quote:
-          'Memiliki satu rekan diskusi strategis untuk audit keuangan, kepatuhan pajak, dan tata kelola teknologi memberi rasa aman penuh saat kami mengekspansi bisnis.',
+          'Memiliki satu rekan diskusi strategis untuk pelaporan keuangan, kepatuhan pajak, dan tata kelola teknologi memberi rasa aman penuh saat kami mengekspansi bisnis.',
         author: 'David Tan',
         role: 'Chief Financial Officer',
         company: 'Artha Capital Group',

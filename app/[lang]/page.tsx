@@ -276,12 +276,7 @@ export default async function HomePage({
               />
             </div>
 
-            {/* Handwritten Floating Script: "Small Steps, Big Results" */}
-            <div className="absolute -top-5 -left-2 sm:-left-4 z-20 bg-white/95 backdrop-blur-md px-4 sm:px-5 py-2 rounded-xl shadow-md border border-amber-200/90 -rotate-6 select-none">
-              <span className="font-[family-name:var(--font-caveat)] text-xl sm:text-2xl font-bold text-[#B45309] block leading-tight">
-                {dict.home.aboutScriptBadge || 'Small Steps, Big Results'}
-              </span>
-            </div>
+           
           </div>
 
           {/* Right Column: Narrative & Learn More */}

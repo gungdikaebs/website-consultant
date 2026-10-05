@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Komponen Floating WhatsApp di `components/FloatingWhatsApp.tsx` telah ditingkatkan dengan fitur popup chat box interaktif: saat di-hover atau di-klik, muncul jendela obrolan resmi 3.SEC dengan pesan pembuka, form input pesan kustom, dan tombol kirim yang langsung membuka `https://wa.me/62123456789?text=pesan_pengguna` pada tab baru; asset resmi `public/icon/whatsapp.svg` terpasang rapi.
+- Working tree: Seluruh istilah 'audit' telah dibersihkan dari konten bahasa Indonesia dan bahasa Inggris (diselaraskan menjadi 'pelaporan keuangan' pada testimoni klien di `lib/content/id.ts`); footer diselaraskan dengan logo baru dan floating WhatsApp interaktif terpasang optimal.
 - Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), `npm run build` PASS (12/12 static SSG routes).
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

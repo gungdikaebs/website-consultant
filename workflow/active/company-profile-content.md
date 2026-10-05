@@ -8,14 +8,14 @@ Konten di bawah adalah sumber copy kedua bahasa. Label ID/EN dan catatan editori
 
 ### Navigasi dan teks bersama
 
-| Elemen | ID | EN |
-| --- | --- | --- |
-| Navigasi | Home · Service · About · Kontak | Home · Service · About · Contact |
-| CTA utama | Diskusikan Kebutuhan Anda | Discuss Your Business Needs |
-| CTA layanan | Jelajahi Layanan | Explore Our Services |
-| CTA profil | Kenali Wirasa | Meet Wirasa |
-| Pilihan bahasa | Bahasa Indonesia · English | Bahasa Indonesia · English |
-| Identitas | Wirasa Business & Advisory | Wirasa Business & Advisory |
+| Elemen           | ID                                                                     | EN                                                                 |
+| ---------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Navigasi         | Home · Service · About · Kontak                                        | Home · Service · About · Contact                                   |
+| CTA utama        | Diskusikan Kebutuhan Anda                                              | Discuss Your Business Needs                                        |
+| CTA layanan      | Jelajahi Layanan                                                       | Explore Our Services                                               |
+| CTA profil       | Kenali Wirasa                                                          | Meet Wirasa                                                        |
+| Pilihan bahasa   | Bahasa Indonesia · English                                             | Bahasa Indonesia · English                                         |
+| Identitas        | Wirasa Business & Advisory                                             | Wirasa Business & Advisory                                         |
 | Ringkasan footer | Partner untuk kebutuhan Tax & Accounting, IT, dan Payroll bisnis Anda. | Your partner for business tax & accounting, IT, and payroll needs. |
 
 ## Home
@@ -354,21 +354,21 @@ Konten di bawah adalah sumber copy kedua bahasa. Label ID/EN dan catatan editori
 
 Gunakan pilihan kebutuhan pada Kontak atau service ID dari CTA layanan. CTA umum menggunakan kebutuhan umum. Pesan berikut dapat diedit pengunjung di WhatsApp; tidak ada pengiriman otomatis.
 
-| Kebutuhan | ID | EN |
-| --- | --- | --- |
-| Umum | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang kebutuhan bisnis saya. | Hello Wirasa Business & Advisory, I would like to discuss my business needs. |
-| Tax & Accounting | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang layanan Tax & Accounting untuk bisnis saya. | Hello Wirasa Business & Advisory, I would like to discuss Tax & Accounting services for my business. |
-| IT | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengembangan website atau aplikasi untuk bisnis saya. | Hello Wirasa Business & Advisory, I would like to discuss website or application development for my business. |
-| Payroll | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengelolaan payroll untuk bisnis saya. | Hello Wirasa Business & Advisory, I would like to discuss payroll management for my business. |
+| Kebutuhan        | ID                                                                                                                   | EN                                                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Umum             | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang kebutuhan bisnis saya.                                | Hello Wirasa Business & Advisory, I would like to discuss my business needs.                                  |
+| Tax & Accounting | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang layanan Tax & Accounting untuk bisnis saya.           | Hello Wirasa Business & Advisory, I would like to discuss Tax & Accounting services for my business.          |
+| IT               | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengembangan website atau aplikasi untuk bisnis saya. | Hello Wirasa Business & Advisory, I would like to discuss website or application development for my business. |
+| Payroll          | Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengelolaan payroll untuk bisnis saya.                | Hello Wirasa Business & Advisory, I would like to discuss payroll management for my business.                 |
 
 ## Data yang perlu dilengkapi sebelum publikasi
 
-| Data | Status | Perlakuan pada draft frontend |
-| --- | --- | --- |
-| Nomor WhatsApp perusahaan | Belum tersedia | State tanpa nomor; semua CTA konsultasi menuju Kontak. |
-| Email, alamat, jam operasional | Belum tersedia | Sembunyikan field yang belum tersedia. |
-| Logo | Belum tersedia | Gunakan nama brand sebagai identitas teks. |
-| Nama, jabatan, foto, dan pengalaman spesifik tim | Belum tersedia | Gunakan paragraf tim di About; kartu profil hanya setelah data tersedia. |
-| Cakupan layanan rinci | Draft berdasarkan wawancara | Tinjau daftar pekerjaan, khususnya administrasi pajak/BPJS dan maintenance. |
+| Data                                             | Status                      | Perlakuan pada draft frontend                                               |
+| ------------------------------------------------ | --------------------------- | --------------------------------------------------------------------------- |
+| Nomor WhatsApp perusahaan                        | Belum tersedia              | State tanpa nomor; semua CTA konsultasi menuju Kontak.                      |
+| Email, alamat, jam operasional                   | Belum tersedia              | Sembunyikan field yang belum tersedia.                                      |
+| Logo                                             | Belum tersedia              | Gunakan nama brand sebagai identitas teks.                                  |
+| Nama, jabatan, foto, dan pengalaman spesifik tim | Belum tersedia              | Gunakan paragraf tim di About; kartu profil hanya setelah data tersedia.    |
+| Cakupan layanan rinci                            | Draft berdasarkan wawancara | Tinjau daftar pekerjaan, khususnya administrasi pajak/BPJS dan maintenance. |
 
 Seluruh copy perlu ditinjau pengguna untuk kesesuaian penawaran dan status kesiapan layanan. Publikasi bukan bagian dari handoff ini.

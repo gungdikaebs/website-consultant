@@ -68,7 +68,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   </span>
                 </Link>
                 <p className="text-xs text-stone-500 mt-0.5 leading-relaxed">
-                  {isId ? 'Kepatuhan pajak, audit, & pembukuan rutin' : 'Tax compliance, advisory & bookkeeping'}
+                  {isId ? 'Kepatuhan pajak, & pembukuan rutin' : 'Tax compliance, advisory & bookkeeping'}
                 </p>
               </li>
               <li>

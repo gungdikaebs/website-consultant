@@ -52,7 +52,6 @@ export const enDictionary: Dictionary = {
     aboutHeadingAccent: 'Your Business Journey',
     aboutSummary:
       '3.SEC Business, Tax & Digital Solution is a consulting firm dedicated to delivering reliable, practical, and tailored solutions in accounting, tax, and business management. We combine professionalism, innovation, and a personal touch to help individuals and businesses achieve sustainable growth.',
-    aboutScriptBadge: 'Small Steps, Big Results',
     aboutMetrics: [
       { value: '7+', label: 'Years of Experience' },
       { value: '100%', label: 'Client Satisfaction' },
@@ -281,11 +280,6 @@ export const enDictionary: Dictionary = {
       'Tell us which service you need, your current business situation, and your goals. This information helps us prepare for a relevant conversation.',
     selectorLabel: 'What would you like to discuss?',
     options: [
-      {
-        id: 'general',
-        label: 'General enquiry',
-        desc: 'Preliminary discussion on priorities and exploring potential business support.',
-      },
       {
         id: 'tax-accounting',
         label: 'Tax & Accounting',

@@ -38,7 +38,7 @@ export default async function ServicePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl space-y-6">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
-            Layanan Wirasa / Our Services
+            Layanan 3.SEC / Our Services
           </span>
           <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
             {dict.service.h1}

@@ -286,8 +286,8 @@ export default function ClientsGrid({
         >
           <span>
             {lang === 'id'
-              ? 'Ingin bermitra dengan Wirasa? Diskusikan kebutuhan Anda'
-              : 'Interested in partnering with Wirasa? Discuss your requirements'}
+              ? 'Ingin bermitra dengan 3.SEC? Diskusikan kebutuhan Anda'
+              : 'Interested in partnering with 3.SEC? Discuss your requirements'}
           </span>
           <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
         </Link>

@@ -1,7 +1,7 @@
 import { ContactConfig } from './types';
 
 /**
- * Konfigurasi kontak perusahaan Wirasa Business & Advisory.
+ * Konfigurasi kontak perusahaan 3.SEC Business, Tax & Digital Solution.
  *
  * Catatan Handoff:
  * - Nilai awal seluruh kontak adalah kosong/null.

@@ -2,21 +2,21 @@ import { Dictionary } from './types';
 
 export const idDictionary: Dictionary = {
   meta: {
-    homeTitle: 'Wirasa Business & Advisory | Tax, IT & Payroll',
+    homeTitle: '3.SEC | Business, Tax & Digital Solution',
     homeDesc:
-      'Kenali layanan Tax & Accounting, pengembangan website dan aplikasi, serta pengelolaan payroll Wirasa untuk bisnis, startup, dan enterprise modern.',
-    serviceTitle: 'Layanan Tax & Accounting, IT & Payroll | Wirasa',
+      'Kenali layanan Tax & Accounting, Digital Solution, serta pengelolaan Payroll & HR 3.SEC untuk bisnis, startup, dan enterprise modern.',
+    serviceTitle: 'Layanan Tax & Accounting, Payroll & HR, Digital Solution | 3.SEC',
     serviceDesc:
-      'Pelajari cakupan konsultasi dan pengelolaan Tax & Accounting, pengembangan website dan aplikasi, serta pengelolaan payroll Wirasa.',
-    aboutTitle: 'Tentang Wirasa Business & Advisory',
+      'Pelajari cakupan konsultasi dan pengelolaan Tax & Accounting, Digital Solution, serta pengelolaan Payroll & HR 3.SEC.',
+    aboutTitle: 'Tentang 3.SEC | Business, Tax & Digital Solution',
     aboutDesc:
-      'Kenali tujuan dan pendekatan Wirasa Business & Advisory sebagai partner Tax & Accounting, IT, dan Payroll terpadu bagi bisnis Anda.',
-    contactTitle: 'Kontak Wirasa Business & Advisory',
+      'Kenali tujuan dan pendekatan 3.SEC Business, Tax & Digital Solution sebagai partner terpadu bagi pertumbuhan bisnis Anda.',
+    contactTitle: 'Kontak 3.SEC | Business, Tax & Digital Solution',
     contactDesc:
-      'Mulai diskusi tentang kebutuhan Tax & Accounting, website atau aplikasi, dan payroll bisnis Anda bersama Wirasa Business & Advisory.',
+      'Mulai diskusi tentang kebutuhan Tax & Accounting, Digital Solution, dan Payroll & HR bisnis Anda bersama 3.SEC Business, Tax & Digital Solution.',
   },
   common: {
-    brand: 'Wirasa Business & Advisory',
+    brand: '3.SEC Business, Tax & Digital Solution',
     nav: {
       home: 'Home',
       service: 'Service',
@@ -26,9 +26,11 @@ export const idDictionary: Dictionary = {
     cta: {
       primary: 'Diskusikan Kebutuhan Anda',
       services: 'Jelajahi Layanan',
-      about: 'Kenali Wirasa',
+      about: 'Kenali 3.SEC Consulting',
       consultation: 'Mulai Konsultasi',
       discuss: 'Diskusikan Sekarang',
+      getInTouch: 'Hubungi Kami',
+      learnMore: 'Pelajari Lebih Lanjut',
     },
     footerSummary:
       'Partner terpercaya untuk kebutuhan Tax & Accounting, IT, dan Payroll bisnis Anda.',
@@ -36,13 +38,48 @@ export const idDictionary: Dictionary = {
     languageLabel: 'Bahasa',
   },
   home: {
-    heroEyebrow: 'Wirasa Business & Advisory',
-    heroH1: 'Satu partner untuk keuangan, teknologi, dan payroll bisnis Anda.',
+    heroEyebrow: 'MITRA TERPERCAYA ANDA',
+    heroH1: 'Better Numbers, Brighter Future.',
+    heroH1Lead: 'Better Numbers,',
+    heroH1Accent: 'Brighter Future.',
     heroBody:
-      'Setiap bisnis memiliki kebutuhan yang berbeda. Wirasa membantu Anda menata Tax & Accounting, mengembangkan website dan aplikasi, serta mengelola payroll melalui satu titik kontak yang memahami kebutuhan Anda.',
-    servicesHeading: 'Dukungan untuk tiga kebutuhan penting bisnis.',
+      'Kami menyediakan layanan akuntansi profesional, perpajakan, payroll, dan solusi digital terpadu untuk membantu bisnis Anda bertumbuh dengan percaya diri — hari ini dan masa depan.',
+    heroScriptBadge: 'Your Growth, Our Priority',
+    servicesHeading: 'Layanan Utama Kami',
     servicesIntro:
-      'Pilih layanan yang Anda perlukan. Kami memulai dengan memahami kondisi bisnis dan menyepakati cakupan pekerjaan yang sesuai.',
+      'Pilih dukungan yang Anda perlukan. Kami memulai dengan memahami kondisi bisnis dan memberikan solusi yang terukur.',
+    aboutEyebrow: 'TENTANG 3.SEC',
+    aboutHeadingLead: 'Dukungan Profesional untuk',
+    aboutHeadingAccent: 'Perjalanan Bisnis Anda',
+    aboutSummary:
+      '3.SEC Business, Tax & Digital Solution adalah firma penasihat dan konsultasi yang berdedikasi menghadirkan solusi akuntansi, perpajakan, payroll, dan solusi digital yang terstruktur, praktis, dan disesuaikan dengan kebutuhan Anda. Kami memadukan profesionalisme, inovasi teknologi, dan pendekatan personal untuk mendorong pertumbuhan bisnis yang berkelanjutan.',
+    aboutScriptBadge: 'Small Steps, Big Results',
+    aboutMetrics: [
+      { value: '7+', label: 'Tahun Pengalaman' },
+      { value: '100%', label: 'Kepuasan Klien' },
+      { value: '50+', label: 'Bisnis Didampingi' },
+    ],
+    whyEyebrow: 'MENGAPA MEMILIH KAMI',
+    whyHeadingLead: 'Lebih Dari Sekadar',
+    whyHeadingAccent: 'Angka',
+    whyPillars: [
+      {
+        title: 'Integritas',
+        desc: 'Kami mengedepankan kepercayaan dan transparansi di setiap langkah pendampingan bisnis.',
+      },
+      {
+        title: 'Solusi Tepat Guna',
+        desc: 'Setiap bisnis memiliki keunikan, begitu pula strategi dan solusi yang kami susun untuk Anda.',
+      },
+      {
+        title: 'Tim Profesional',
+        desc: 'Berpengalaman, responsif, dan siap menjadi mitra strategis dalam pengambilan keputusan penting.',
+      },
+      {
+        title: 'Kemitraan Jangka Panjang',
+        desc: 'Keberhasilan dan stabilitas bisnis Anda adalah komitmen utama kami dalam jangka panjang.',
+      },
+    ],
     clientsEyebrow: 'Klien Kami / Our Clients',
     clientsHeading: 'Dipercaya oleh Berbagai Entitas Bisnis & Perusahaan',
     clientsSubheading:
@@ -69,7 +106,7 @@ export const idDictionary: Dictionary = {
       {
         id: 'review-1',
         quote:
-          'Mengelola kepatuhan pajak dan pembukuan usaha kami awalnya terasa menantang. Tim Wirasa memberikan arahan terstruktur, transparan, dan tanggap atas setiap regulasi yang harus kami penuhi.',
+          'Mengelola kepatuhan pajak dan pembukuan usaha kami awalnya terasa menantang. Tim 3.SEC Consulting memberikan arahan terstruktur, transparan, dan tanggap atas setiap regulasi yang harus kami penuhi.',
         author: 'Michael Huber',
         role: 'Managing Director',
         company: 'Pacific Living Group',
@@ -102,7 +139,7 @@ export const idDictionary: Dictionary = {
       {
         id: 'review-4',
         quote:
-          'Kemampuan tim Wirasa memadukan solusi cloud modern dan otomatisasi sistem pelaporan gaji menghemat waktu tim internal kami secara drastis dengan keandalan maksimal.',
+          'Kemampuan tim 3.SEC Consulting memadukan solusi cloud modern dan otomatisasi sistem pelaporan gaji menghemat waktu tim internal kami secara drastis dengan keandalan maksimal.',
         author: 'Amanda Vance',
         role: 'VP of Engineering',
         company: 'Nexus Venture Labs',
@@ -159,7 +196,7 @@ export const idDictionary: Dictionary = {
     ],
     faqHeading: 'Pertanyaan yang Sering Diajukan',
     faqIntro:
-      'Jawaban ringkas seputar konsultasi dan cara memulai kerja sama bersama Wirasa.',
+      'Jawaban ringkas seputar konsultasi dan cara memulai kerja sama bersama 3.SEC Consulting.',
     faqs: [
       {
         question: 'Apakah saya harus menggunakan ketiga layanan?',
@@ -167,7 +204,7 @@ export const idDictionary: Dictionary = {
           'Tidak. Anda dapat memulai dari layanan yang dibutuhkan dan membahas dukungan tambahan bila relevan.',
       },
       {
-        question: 'Siapa yang dapat menggunakan layanan Wirasa?',
+        question: 'Siapa yang dapat menggunakan layanan 3.SEC Consulting?',
         answer:
           'Layanan kami dirancang untuk berbagai jenis entitas bisnis, mulai dari usaha berkembang, startup, hingga perusahaan lintas industri.',
       },
@@ -215,7 +252,7 @@ export const idDictionary: Dictionary = {
   about: {
     h1: 'Pendampingan bisnis dimulai dengan memahami kebutuhan Anda.',
     profile:
-      'Wirasa Business & Advisory dibangun untuk mempertemukan dukungan Tax & Accounting, IT, dan Payroll melalui satu partner terpercaya. Kami melayani berbagai jenis entitas bisnis dan perusahaan modern dari berbagai industri.',
+      '3.SEC Business, Tax & Digital Solution dibangun untuk mempertemukan dukungan Tax & Accounting, Digital Solution, dan Payroll & HR melalui satu partner terpercaya. Kami melayani berbagai jenis entitas bisnis dan perusahaan modern dari berbagai industri.',
     purposeHeading: 'Membantu bisnis mengambil langkah yang lebih terarah.',
     purposeBody:
       'Kami ingin membantu Anda memahami kebutuhan, menentukan prioritas, dan menyepakati pekerjaan yang relevan. Setiap layanan dimulai dari kondisi bisnis Anda, bukan dari paket yang harus digunakan seluruhnya.',
@@ -236,7 +273,7 @@ export const idDictionary: Dictionary = {
     ],
     teamHeading: 'Berangkat dari pengalaman anggota tim.',
     teamBody:
-      'Beberapa anggota tim Wirasa memiliki pengalaman menangani klien sebelum bergabung dalam Wirasa. Pengalaman tersebut menjadi bekal untuk memahami kebutuhan klien dan membangun pendekatan layanan kami.',
+      'Beberapa anggota tim 3.SEC Consulting memiliki pengalaman menangani klien sebelum bergabung dalam 3.SEC Consulting. Pengalaman tersebut menjadi bekal untuk memahami kebutuhan klien dan membangun pendekatan layanan kami.',
     closingCta: 'Kenali dukungan yang sesuai untuk bisnis Anda.',
   },
   contact: {
@@ -256,14 +293,14 @@ export const idDictionary: Dictionary = {
         desc: 'Konsultasi pembukuan, laporan keuangan, dan administrasi pajak.',
       },
       {
-        id: 'it',
-        label: 'IT Consultant',
-        desc: 'Rencana website, aplikasi bisnis, dan kesepakatan maintenance.',
+        id: 'payroll',
+        label: 'Payroll & HR Consultant',
+        desc: 'Perhitungan gaji, slip gaji, dan administrasi payroll & HR karyawan.',
       },
       {
-        id: 'payroll',
-        label: 'Payroll Consultant',
-        desc: 'Perhitungan gaji, slip gaji, dan administrasi payroll karyawan.',
+        id: 'it',
+        label: 'Digital Solution',
+        desc: 'Rencana website modern, aplikasi bisnis, dan transformasi digital.',
       },
     ],
     supportingHeading: 'Informasi yang dapat Anda siapkan.',
@@ -275,7 +312,7 @@ export const idDictionary: Dictionary = {
     primaryContactLabel: 'Kontak Utama: WhatsApp',
     whatsappCta: 'Mulai Percakapan di WhatsApp',
     noNumberNotice:
-      'Detail kontak Wirasa sedang disiapkan. Nomor WhatsApp akan ditampilkan di halaman ini setelah tersedia.',
+      'Detail kontak 3.SEC Consulting sedang disiapkan. Nomor WhatsApp akan ditampilkan di halaman ini setelah tersedia.',
     optionalLabels: {
       email: 'Email',
       address: 'Alamat',
@@ -284,12 +321,12 @@ export const idDictionary: Dictionary = {
   },
   whatsappMessages: {
     general:
-      'Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang kebutuhan bisnis saya.',
+      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang kebutuhan bisnis saya.',
     'tax-accounting':
-      'Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang layanan Tax & Accounting untuk bisnis saya.',
-    it:
-      'Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengembangan website atau aplikasi untuk bisnis saya.',
+      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang layanan Tax & Accounting untuk bisnis saya.',
     payroll:
-      'Halo Wirasa Business & Advisory, saya ingin berdiskusi tentang pengelolaan payroll untuk bisnis saya.',
+      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang layanan Payroll & HR Consultant untuk bisnis saya.',
+    it:
+      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang kebutuhan Digital Solution untuk bisnis saya.',
   },
 };

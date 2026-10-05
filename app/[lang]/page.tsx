@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
-import ServiceCard from '@/components/ServiceCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import ClientsGrid from '@/components/ClientsGrid';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -38,171 +37,350 @@ export default async function HomePage({
   const services = getServices(validLang);
   const isId = validLang === 'id';
 
-  // 4-Column Credibility Metrics (inspired by Navis reference)
-  const heroMetrics = isId ? [
-    { value: '3-in-1', label: 'Pilar Terpadu', desc: 'Tax & Accounting, IT Consultant, dan Payroll dalam satu tim.' },
-    { value: '1 Kontak', label: 'Titik Koordinasi', desc: 'Satu saluran terintegrasi tanpa fragmentasi komunikasi.' },
-    { value: '100%', label: 'Kepatuhan Regulasi', desc: 'Akurasi pelaporan, standar SAK/IFRS, dan keamanan data.' },
-    { value: 'Global', label: 'Skala Layanan', desc: 'Mendukung operasional bisnis, startup, dan enterprise modern.' },
-  ] : [
-    { value: '3-in-1', label: 'Unified Pillars', desc: 'Tax & Accounting, IT, and Payroll coordinated under one partner.' },
-    { value: '1 Point', label: 'Strategic Contact', desc: 'Single point of contact without fragmented vendor friction.' },
-    { value: '100%', label: 'Regulatory Adherence', desc: 'Verified accounting standards, strict compliance, and data security.' },
-    { value: 'Global', label: 'Scalable Scope', desc: 'Designed for international ventures, startups, and growing enterprises.' },
+  // 3 Core Services Icons & Badges
+  const serviceCardMeta = [
+    {
+      id: 'tax-accounting',
+      iconBg: 'bg-sky-50 text-sky-600 border-sky-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      id: 'payroll',
+      iconBg: 'bg-rose-50 text-rose-600 border-rose-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      id: 'it',
+      iconBg: 'bg-amber-50 text-amber-600 border-amber-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+  ];
+
+  // Why Choose Us Pillars Icons
+  const whyIcons = [
+    {
+      bg: 'bg-rose-50 text-[#B91C1C] border-rose-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      ),
+    },
+    {
+      bg: 'bg-sky-50 text-sky-600 border-sky-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+    },
+    {
+      bg: 'bg-amber-50 text-amber-600 border-amber-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
+    },
+    {
+      bg: 'bg-red-50 text-red-600 border-red-100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
   ];
 
   return (
-    <div className="flex flex-col gap-20 sm:gap-28 lg:gap-36 pb-20">
-      {/* 1. Hero Section: Clean Light Modern Consulting (Refined Aesthetic matching Navis) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-4 w-full space-y-12 sm:space-y-16">
-        {/* Asymmetric Split Header Row: Top-Aligned with Precise Baseline */}
-        <div data-gsap="fade-up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-          {/* Left: Modern Clean Headline */}
-          <div className="lg:col-span-7">
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-[#0B192C] tracking-tight leading-[1.12]">
-              {isId ? 'Panduan strategis, solusi terpadu.' : 'Expert guidance, tailored solutions.'}
-            </h1>
-          </div>
-
-          {/* Right: Top-aligned Sub-headline & Modern Pill Buttons */}
-          <div className="lg:col-span-5 space-y-5 lg:pl-2 pt-1 lg:pt-2.5">
-            <p className="text-[15px] sm:text-base text-stone-600 leading-relaxed font-normal">
-              {isId
-                ? 'Kembangkan operasional bisnis Anda melalui sinergi tiga pilar terpadu: Tax & Accounting, arsitektur IT, dan manajemen Payroll yang dirancang untuk mendukung pertumbuhan berkelanjutan.'
-                : 'Easily adapt to changes and scale your operations with our integrated advisory infrastructure across Tax, IT, and Payroll, designed to support your business growth.'}
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <Link
-                href={`/${validLang}/contact`}
-                className="inline-flex items-center justify-center min-h-[46px] px-6 py-2.5 rounded-full bg-[#0B192C] hover:bg-[#1E2E45] text-white font-semibold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
-              >
-                <span>{isId ? 'Mulai Konsultasi' : 'Get Started'}</span>
-                <span className="ml-1.5 font-sans">&rarr;</span>
-              </Link>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center min-h-[46px] px-6 py-2.5 rounded-full border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 text-[#0B192C] font-semibold text-xs sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
-              >
-                {isId ? 'Jelajahi Layanan' : 'Explore Services'}
-              </a>
-            </div>
-          </div>
+    <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 pb-20">
+      {/* 1. Hero Section: Refined Bali Regional Advisory Aesthetic */}
+      <section className="relative pt-6 sm:pt-12 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-sky-50/50 via-[#FBFBF9] to-white">
+        {/* Subtle Background Organic Lines */}
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <svg
+            className="absolute -top-24 right-0 w-[600px] h-[600px] text-amber-200/40 opacity-70"
+            viewBox="0 0 600 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100 200C250 80 450 120 580 250C710 380 620 520 480 580"
+              stroke="#D97706"
+              strokeWidth="2.5"
+              strokeDasharray="6 8"
+            />
+            <path
+              d="M160 160C320 60 520 140 620 300C700 440 580 560 420 590"
+              stroke="#B91C1C"
+              strokeWidth="1.5"
+              opacity="0.3"
+            />
+          </svg>
         </div>
 
-        {/* Centerpiece Landscape Photo with Cinematic Aspect Ratio */}
-        <div data-gsap="fade-up" className="space-y-10 sm:space-y-14">
-          <div className="relative aspect-[16/9] sm:aspect-[2.2/1] lg:aspect-[2.4/1] w-full rounded-[28px] sm:rounded-[36px] overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 group">
-            <Image
-              src="/images/hero-consulting.jpg"
-              alt="Kolaborasi tim konsultan profesional Wirasa Business & Advisory"
-              fill
-              priority
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.02]"
-            />
-          </div>
-
-          {/* 4-Column Minimalist Metrics Bar */}
-          <div data-gsap="stagger-group" className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 pt-2">
-            {heroMetrics.map((metric, idx) => (
-              <div key={idx} className="space-y-1.5 border-l-2 border-[#0F766E]/40 pl-4 sm:pl-6">
-                <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B192C] tracking-tight">
-                  {metric.value}
-                </div>
-                <div className="font-semibold text-xs sm:text-sm text-[#0B192C]">
-                  {metric.label}
-                </div>
-                <p className="text-xs text-stone-600 leading-relaxed max-w-xs">
-                  {metric.desc}
-                </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div data-gsap="fade-up" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            {/* Left Column: Bold Headline & Actions */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2">
+                <span className="font-mono text-xs sm:text-sm font-bold tracking-widest text-[#0284C7] uppercase">
+                  {dict.home.heroEyebrow}
+                </span>
               </div>
-            ))}
+
+              {/* 2-Tone Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-[60px] font-extrabold tracking-tight leading-[1.12]">
+                <span className="text-[#0B192C] block">
+                  {dict.home.heroH1Lead || 'Better Numbers,'}
+                </span>
+                <span className="text-[#B91C1C] block">
+                  {dict.home.heroH1Accent || 'Brighter Future.'}
+                </span>
+              </h1>
+
+              {/* Sub-headline / Body */}
+              <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-xl">
+                {dict.home.heroBody}
+              </p>
+
+              {/* CTA Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
+                <Link
+                  href={`/${validLang}/contact`}
+                  className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3 rounded-full bg-[#B91C1C] hover:bg-[#991B1B] text-white font-semibold text-sm shadow-md hover:shadow-xl transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C]"
+                >
+                  <span>{dict.common.cta.consultation}</span>
+                  <span className="text-base font-sans">&rarr;</span>
+                </Link>
+
+                <a
+                  href="#services"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B192C] hover:text-[#B91C1C] transition-colors group py-2"
+                >
+                  <span>{dict.common.cta.services}</span>
+                  <span className="text-[#D97706] group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Ulun Danu Beratan Bali Temple with Flowing Ribbon & Gold Script */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative w-full max-w-lg lg:max-w-none mx-auto">
+                {/* Dynamic Gradient Ribbon Frame Behind Photo */}
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-full h-full rounded-[40px] sm:rounded-[52px] bg-gradient-to-tr from-[#D97706]/20 via-[#B91C1C]/15 to-transparent -rotate-1 pointer-events-none" />
+
+                {/* Main Temple Photo Container */}
+                <div className="relative aspect-[4/3] rounded-[32px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-2xl bg-sky-100 group">
+                  <Image
+                    src="/images/bali-temple.jpg"
+                    alt="Pura Ulun Danu Beratan Bali - 3.SEC Business, Tax & Digital Solution"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C]/25 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Floating Handwritten Script Badge: "Your Growth, Our Priority" */}
+                <div className="absolute -bottom-6 -right-2 sm:right-6 z-20 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-2.5 sm:py-3 rounded-2xl shadow-xl border border-amber-200/90 -rotate-3 select-none">
+                  <span className="font-[family-name:var(--font-caveat)] text-2xl sm:text-3xl font-bold text-[#B45309] block leading-tight tracking-wide">
+                    {dict.home.heroScriptBadge || 'Your Growth, Our Priority'}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Section: Discover our commitment to excellence (Split Alternating Layout) */}
+      {/* 2. Floating Service Cards: The 3 Core Pillars (Tax & Accounting, Payroll & HR, Digital Solution) */}
+      <section id="services" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-10 sm:-mt-16 relative z-30">
+        <div data-gsap="stagger-group" className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((srv, idx) => {
+            const meta = serviceCardMeta[idx] || serviceCardMeta[0];
+            return (
+              <div
+                key={srv.id}
+                className="bg-white rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+              >
+                <div className="space-y-4">
+                  {/* Icon with Pastel Background */}
+                  <div className={`w-13 h-13 rounded-2xl flex items-center justify-center border ${meta.iconBg} shadow-2xs`}>
+                    {meta.icon}
+                  </div>
+
+                  {/* Title & Tag */}
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-stone-600 block">
+                      {srv.tag}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0B192C] tracking-tight group-hover:text-[#B91C1C] transition-colors">
+                      {srv.title}
+                    </h3>
+                  </div>
+
+                  {/* Short Description */}
+                  <p className="text-sm text-stone-600 leading-relaxed font-normal">
+                    {srv.shortDesc}
+                  </p>
+                </div>
+
+                {/* Card CTA: Learn More */}
+                <div className="pt-6 border-t border-stone-100 mt-6">
+                  <Link
+                    href={`/${validLang}/service#${srv.id}`}
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#B91C1C] group-hover:text-[#991B1B] transition-colors"
+                  >
+                    <span>{dict.common.cta.learnMore || (isId ? 'Pelajari Lebih Lanjut' : 'Learn More')}</span>
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 3. About Section: Professional Support for Your Business Journey */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div data-gsap="fade-up" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left Column: Narrative Commitment */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center px-3.5 py-1 rounded-full border border-stone-200 bg-stone-50 text-xs font-mono font-medium text-[#0F766E] uppercase tracking-wider">
-              <span>{isId ? 'KOMITMEN / EXPERTISE' : 'EXPERTISE & COMMITMENT'}</span>
+        <div data-gsap="fade-up" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Column: Organic Workspace Photo with Golden Outline & Handwritten Note */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/3] rounded-[32px] sm:rounded-[40px] overflow-hidden border-2 border-amber-300/80 shadow-lg bg-stone-100 group">
+              <Image
+                src="/images/about-desk.jpg"
+                alt="Workspace 3.SEC Business, Tax & Digital Solution"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
 
-            <h2 className="font-[family-name:var(--font-lora)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B192C] tracking-tight leading-[1.16]">
-              {isId
-                ? 'Komitmen kami pada ketepatan dan pertumbuhan bisnis.'
-                : 'Discover our commitment to business excellence.'}
+            {/* Handwritten Floating Script: "Small Steps, Big Results" */}
+            <div className="absolute -top-5 -left-2 sm:-left-4 z-20 bg-white/95 backdrop-blur-md px-4 sm:px-5 py-2 rounded-xl shadow-md border border-amber-200/90 -rotate-6 select-none">
+              <span className="font-[family-name:var(--font-caveat)] text-xl sm:text-2xl font-bold text-[#B45309] block leading-tight">
+                {dict.home.aboutScriptBadge || 'Small Steps, Big Results'}
+              </span>
+            </div>
+          </div>
+
+          {/* Center Column: Narrative & Learn More */}
+          <div className="lg:col-span-4 space-y-5">
+            <div className="inline-flex items-center gap-2">
+              <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
+                {dict.home.aboutEyebrow || (isId ? 'TENTANG 3.SEC' : 'ABOUT 3.SEC')}
+              </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C] tracking-tight leading-[1.18]">
+              {dict.home.aboutHeadingLead || (isId ? 'Dukungan Profesional untuk' : 'Professional Support for')}{' '}
+              <span className="text-[#D97706] block sm:inline">
+                {dict.home.aboutHeadingAccent || (isId ? 'Perjalanan Bisnis Anda' : 'Your Business Journey')}
+              </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-              {dict.home.approachBody}
+            <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+              {dict.home.aboutSummary || dict.about.profile}
             </p>
 
             <div className="pt-2">
               <Link
                 href={`/${validLang}/about`}
-                className="inline-flex items-center justify-center min-h-[46px] px-6 py-2.5 rounded-full bg-[#0B192C] hover:bg-[#1E2E45] text-white font-semibold text-xs sm:text-sm transition-all active:scale-95 shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
+                className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-full border border-[#D97706] hover:border-[#B45309] bg-white hover:bg-amber-50/50 text-[#0B192C] font-semibold text-xs sm:text-sm transition-all shadow-2xs"
               >
-                <span>{isId ? 'Pelajari Pendekatan Kami' : 'Learn About Us'}</span>
-                <span className="ml-2">&rarr;</span>
+                <span>{dict.common.cta.learnMore || (isId ? 'Pelajari Lebih Lanjut' : 'Learn More')}</span>
+                <span className="ml-2 font-sans">&rarr;</span>
               </Link>
             </div>
           </div>
 
-          {/* Right Column: High Quality Discussion Image */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md border border-stone-200/90 group bg-stone-100">
-              <Image
-                src="/images/commitment-discussion.jpg"
-                alt="Pertemuan konsultasi strategis bersama Wirasa"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          </div>
+          {/* Right Column: 3 Vertical Credibility Metrics Cards */}
+        
         </div>
       </section>
 
-      {/* 3. Services Section: Explore our comprehensive service offerings */}
-      <section id="services" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div data-gsap="fade-up" className="space-y-4 max-w-2xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-3.5 py-1 rounded-full border border-stone-200 bg-stone-50 text-xs font-mono font-medium text-[#0F766E] uppercase tracking-wider">
-            <span>{isId ? 'BIDANG LAYANAN / SERVICES' : 'CORE OFFERINGS'}</span>
-          </div>
-          <h2 className="font-[family-name:var(--font-lora)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B192C] tracking-tight leading-[1.16]">
-            {isId ? 'Jelajahi tiga pilar layanan terpadu kami.' : 'Explore our comprehensive service offerings.'}
+      {/* 4. Why Choose Us Section: More Than Just Numbers */}
+      <section id="why-us" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
+        <div data-gsap="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-12 sm:mb-16">
+          <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
+            {dict.home.whyEyebrow || (isId ? 'MENGAPA MEMILIH KAMI' : 'WHY CHOOSE US')}
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B192C] tracking-tight">
+            {dict.home.whyHeadingLead || (isId ? 'Lebih Dari Sekadar' : 'More Than Just')}{' '}
+            <span className="text-[#D97706]">
+              {dict.home.whyHeadingAccent || (isId ? 'Angka' : 'Numbers')}
+            </span>
           </h2>
-          <p className="text-base text-stone-600 leading-relaxed">
-            {dict.home.servicesIntro}
-          </p>
         </div>
 
-        {/* 3 Pillars Grid with Equal Prominence */}
-        <div data-gsap="stagger-group" className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              lang={validLang}
-            />
-          ))}
+        <div data-gsap="stagger-group" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {(dict.home.whyPillars || [
+            {
+              title: isId ? 'Integritas' : 'Integrity',
+              desc: isId ? 'Kami mengedepankan kepercayaan dan transparansi di setiap langkah.' : 'We value trust and transparency in every step.',
+            },
+            {
+              title: isId ? 'Solusi Tepat Guna' : 'Tailored Solutions',
+              desc: isId ? 'Setiap bisnis memiliki keunikan, begitu pula strategi yang kami tawarkan.' : 'Every business is unique, so are our strategies.',
+            },
+            {
+              title: isId ? 'Tim Profesional' : 'Professional Team',
+              desc: isId ? 'Berpengalaman, responsif, dan siap mendampingi kebutuhan Anda.' : 'Experienced, responsive, and ready to help.',
+            },
+            {
+              title: isId ? 'Kemitraan Jangka Panjang' : 'Long-Term Partnership',
+              desc: isId ? 'Keberhasilan Anda adalah tujuan jangka panjang kami.' : 'Your success is our long-term goal.',
+            },
+          ]).map((pillar, idx) => {
+            const iconMeta = whyIcons[idx] || whyIcons[0];
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-stone-200/90 shadow-2xs hover:shadow-md transition-all text-center flex flex-col items-center space-y-4 group"
+              >
+                <div className={`w-13 h-13 rounded-2xl flex items-center justify-center border ${iconMeta.bg} shadow-2xs group-hover:scale-110 transition-transform`}>
+                  {iconMeta.icon}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-bold text-lg text-[#0B192C] tracking-tight">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                    {pillar.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* 4. Clients Section: 2-Row Infinite Smooth Sliding Marquee */}
+      {/* 5. Clients / Sector Credibility Marquee */}
       <ClientsGrid
+        lang={validLang}
         eyebrow={dict.home.clientsEyebrow}
         heading={dict.home.clientsHeading}
         subheading={dict.home.clientsSubheading}
         clients={dict.home.clientsList}
-        lang={validLang}
       />
 
-      {/* 5. Testimonials Section: Verified Client Experiences */}
+      {/* 6. Testimonials Carousel: Authentic Client Voice */}
       <TestimonialsSection
         eyebrow={dict.home.testimonialsEyebrow}
         heading={dict.home.testimonialsHeading}
@@ -210,38 +388,13 @@ export default async function HomePage({
         testimonials={dict.home.testimonialsList}
       />
 
-      {/* 6. FAQ Section: 2-Column Clean Card Layout */}
+      {/* 7. Comprehensive FAQ Section */}
       <FAQAccordion
-        items={dict.home.faqs}
         lang={validLang}
         heading={dict.home.faqHeading}
         subheading={dict.home.faqIntro}
+        items={dict.home.faqs}
       />
-
-      {/* 7. Closing Editorial CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="p-8 sm:p-14 lg:p-16 rounded-3xl bg-stone-100/70 border border-stone-200/90 text-[#0B192C] relative overflow-hidden">
-          <div className="max-w-2xl space-y-6 relative z-10">
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
-              {isId ? 'Langkah Berikutnya' : 'Next Step'}
-            </span>
-            <h2 className="font-[family-name:var(--font-lora)] text-3xl sm:text-4xl font-bold tracking-tight text-[#0B192C] leading-tight">
-              {dict.home.closingHeading}
-            </h2>
-            <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-              {dict.home.closingBody}
-            </p>
-            <div className="pt-2">
-              <Link
-                href={`/${validLang}/contact`}
-                className="inline-flex items-center justify-center min-h-[48px] px-8 py-3 rounded-full bg-[#0B192C] hover:bg-[#1E2E45] text-white font-semibold text-sm transition-all active:scale-95 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
-              >
-                {dict.common.cta.primary}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

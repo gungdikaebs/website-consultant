@@ -38,7 +38,7 @@ export default async function AboutPage({
       <section className="space-y-8">
         <div className="flex items-center gap-3 border-b border-stone-200/90 pb-4">
           <span className="font-mono text-xs font-medium tracking-widest text-[#0F766E] uppercase">
-            {validLang === 'id' ? 'Tentang Wirasa' : 'About Wirasa'}
+            {validLang === 'id' ? 'Tentang 3.SEC' : 'About 3.SEC'}
           </span>
           <span className="text-stone-300 font-mono text-xs">/</span>
           <span className="font-mono text-xs tracking-wider text-stone-500 uppercase">
@@ -62,7 +62,7 @@ export default async function AboutPage({
         <div className="relative aspect-[16/9] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/80 bg-stone-100">
           <Image
             src="/images/about-workspace.jpg"
-            alt="Suasana ruang kerja dan konsultasi Wirasa Business & Advisory"
+            alt="Suasana ruang kerja dan konsultasi 3.SEC Business, Tax & Digital Solution"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 1024px"
@@ -75,7 +75,7 @@ export default async function AboutPage({
               ? 'Gbr 1.0 — Ruang Pertemuan Konsultasi Strategis'
               : 'Fig 1.0 — Strategic Consultation & Advisory Setting'}
           </span>
-          <span className="hidden sm:inline">Wirasa Business &amp; Advisory</span>
+          <span className="hidden sm:inline">3.SEC Business, Tax &amp; Digital Solution</span>
         </div>
       </section>
 

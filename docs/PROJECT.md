@@ -2,9 +2,9 @@
 
 ## Tujuan dan pengguna
 
-Wirasa Business & Advisory adalah brand company profile untuk Tax & Accounting, IT, dan Payroll. Website menargetkan bisnis lokal dan asing yang menjalankan kegiatan usaha di Bali/Indonesia, lintas industri. Tujuan utama adalah percakapan konsultasi melalui WhatsApp.
+3.SEC Business, Tax & Digital Solution adalah brand company profile untuk Business, Tax & Digital Solution (Tax & Accounting, Digital Solution, dan Payroll & HR Consultant). Website menargetkan bisnis lokal dan asing yang menjalankan kegiatan usaha di Bali/Indonesia maupun global, lintas industri. Tujuan utama adalah percakapan konsultasi melalui WhatsApp.
 
-Positioning: **satu partner untuk tiga bidang layanan**, dengan porsi setara. Wirasa belum beroperasi; beberapa anggota tim memiliki pengalaman menangani klien sebelumnya. Pengalaman tersebut melekat pada anggota tim, bukan riwayat klien perusahaan.
+Positioning: **satu partner untuk tiga bidang layanan**, dengan porsi setara. 3.SEC belum beroperasi; beberapa anggota tim memiliki pengalaman menangani klien sebelumnya. Pengalaman tersebut melekat pada anggota tim, bukan riwayat klien perusahaan.
 
 ## Contract produk yang disepakati
 

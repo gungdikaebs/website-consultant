@@ -1,4 +1,4 @@
-# Wirasa Business & Advisory — Frontend handoff
+# 3.SEC Business, Tax & Digital Solution — Frontend handoff
 
 Status artifact: HANDOFF — scope disetujui, konten draft menunggu tinjauan pengguna.
 

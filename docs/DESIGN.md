@@ -4,7 +4,7 @@ Status: sistem visual stabil dan frontend empat halaman bilingual terimplementas
 
 ## Brief
 
-Company profile Wirasa Business & Advisory untuk bisnis dan enterprise modern lintas industri secara global. Pesan utama: satu partner untuk Tax & Accounting, IT, dan Payroll. Ketiganya mendapat porsi setara.
+Company profile 3.SEC Business, Tax & Digital Solution untuk bisnis dan enterprise modern lintas industri secara global. Pesan utama: satu partner untuk Tax & Accounting, Digital Solution, dan Payroll & HR Consultant. Ketiganya mendapat porsi setara.
 
 Karakter disepakati: **profesional dan modern** dengan pendekatan *The Refined Modern Advisory* bernuansa editorial yang jernih, arsitektural, dan personal.
 

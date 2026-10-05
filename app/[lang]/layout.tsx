@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Lora, Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google';
+import { Lora, Plus_Jakarta_Sans, Geist_Mono, Caveat } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, LOCALES } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
@@ -28,6 +28,13 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '600'],
+});
+
+const caveat = Caveat({
+  variable: '--font-caveat',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['500', '600', '700'],
 });
 
 export async function generateStaticParams() {
@@ -69,7 +76,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={validLang}
-      className={`${lora.variable} ${plusJakartaSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${lora.variable} ${plusJakartaSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#FBFBF9] text-[#334155] font-sans">
         <SmoothScroll>

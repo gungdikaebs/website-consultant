@@ -38,10 +38,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     };
   }, [mobileMenuOpen]);
 
+  const isId = lang === 'id';
   const navItems = [
     { label: dictionary.common.nav.home, href: `/${lang}` },
-    { label: dictionary.common.nav.service, href: `/${lang}/service` },
     { label: dictionary.common.nav.about, href: `/${lang}/about` },
+    { label: dictionary.common.nav.service, href: `/${lang}/service` },
+    { label: dictionary.common.nav.contact, href: `/${lang}/contact` },
   ];
 
   return (
@@ -49,30 +51,47 @@ export default function Header({ lang, dictionary }: HeaderProps) {
       {/* Top Navigation Bar with subtle backdrop blur */}
       <div className="w-full bg-[#FBFBF9]/95 backdrop-blur-md border-b border-stone-200/80 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          {/* Brand Text Identity */}
+          {/* Brand Logo & Text Identity */}
           <Link
             href={`/${lang}`}
-            className="group flex flex-col focus-visible:ring-2 focus-visible:ring-[#0F766E] rounded-md py-1"
+            className="group flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#B91C1C] rounded-md py-1"
             aria-label={dictionary.common.brand}
           >
-            <span className="font-bold text-xl sm:text-2xl text-[#0B192C] tracking-tight group-hover:text-[#0F766E] transition-colors">
-              Wirasa
-            </span>
-            <span className="text-[11px] font-medium tracking-widest uppercase text-stone-500 group-hover:text-stone-700 transition-colors">
-              Business & Advisory
-            </span>
+            {/* Geometric Prism Icon Logo (Navy, Crimson, Gold facets) */}
+            <svg
+              className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 transition-transform duration-300 group-hover:scale-105"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M4 9L17 28L13 34L2 13L4 9Z" fill="#0B192C" />
+              <path d="M17 28L11 9H17.5L21.5 21L17 28Z" fill="#B91C1C" />
+              <path d="M21.5 21L26.5 9H33L24 30.5L21.5 21Z" fill="#D97706" />
+            </svg>
+
+            <div className="flex flex-col">
+              <span className="font-bold text-lg sm:text-xl text-[#0B192C] tracking-tight group-hover:text-[#B91C1C] transition-colors leading-tight">
+                3.SEC
+              </span>
+              <span className="text-[10px] font-semibold tracking-widest uppercase text-stone-500 group-hover:text-stone-700 transition-colors leading-tight">
+                Business, Tax & Digital Solution
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links: Clean Minimal Text */}
           <nav
             aria-label="Navigasi Utama"
-            className="hidden md:flex items-center gap-8 text-sm font-medium"
+            className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium"
           >
             {navItems.map((item) => {
+              const isHash = item.href.includes('#');
               const isActive =
-                item.href === `/${lang}`
+                !isHash &&
+                (item.href === `/${lang}`
                   ? pathname === `/${lang}`
-                  : pathname.startsWith(item.href);
+                  : pathname.startsWith(item.href));
 
               return (
                 <Link
@@ -83,9 +102,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
-                  className={`py-2 transition-colors focus:outline-none select-none ${
+                  className={`py-2 transition-colors focus:outline-none select-none relative ${
                     isActive
-                      ? 'text-[#0B192C] font-semibold'
+                      ? 'text-[#0B192C] font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#B91C1C]'
                       : 'text-stone-600 hover:text-[#0B192C]'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
@@ -96,7 +115,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             })}
           </nav>
 
-          {/* Desktop Actions: Language & Consultation CTA */}
+          {/* Desktop Actions: Language & Crimson Pill CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Suspense fallback={<div className="w-16 h-7 bg-stone-100 rounded-full animate-pulse" />}>
               <LanguageSwitcher currentLocale={lang} />
@@ -105,9 +124,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             <Link
               href={`/${lang}/contact`}
               aria-current={pathname.startsWith(`/${lang}/contact`) ? 'page' : undefined}
-              className="inline-flex items-center justify-center px-5 py-2 text-xs font-semibold rounded-full bg-[#0B192C] text-white hover:bg-[#1E2E45] active:bg-[#07101D] transition-all shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C] focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-xs font-semibold rounded-full bg-[#B91C1C] text-white hover:bg-[#991B1B] active:scale-95 transition-all shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C] focus-visible:ring-offset-2"
             >
-              {dictionary.common.cta.consultation}
+              <span>{dictionary.common.cta.getInTouch || (isId ? 'Hubungi Kami' : 'Get in Touch')}</span>
+              <span className="text-sm font-sans">&rarr;</span>
             </Link>
           </div>
 
@@ -120,7 +140,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-stone-700 hover:text-[#0B192C] hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-stone-700 hover:text-[#0B192C] hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C]"
               aria-expanded={mobileMenuOpen}
               aria-label="Buka navigasi"
             >
@@ -141,7 +161,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
         />
       )}
 
-      {/* Mobile Navigation Drawer: Full-height Solid Slide-over Sheet */}
+      {/* Mobile Navigation Drawer */}
       <div
         className={`fixed inset-y-0 right-0 z-50 w-full max-w-xs sm:max-w-sm bg-[#FBFBF9] border-l border-stone-200 shadow-2xl transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between h-[100dvh] overflow-y-auto ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
@@ -152,18 +172,25 @@ export default function Header({ lang, dictionary }: HeaderProps) {
       >
         {/* Drawer Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-stone-200 shrink-0">
-          <div className="flex flex-col">
-            <span className="font-bold text-xl text-[#0B192C] tracking-tight">
-              Wirasa
-            </span>
-            <span className="text-[10px] font-medium tracking-widest uppercase text-stone-500">
-              Business & Advisory
-            </span>
+          <div className="flex items-center gap-2">
+            <svg className="w-7 h-7 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 9L17 28L13 34L2 13L4 9Z" fill="#0B192C" />
+              <path d="M17 28L11 9H17.5L21.5 21L17 28Z" fill="#B91C1C" />
+              <path d="M21.5 21L26.5 9H33L24 30.5L21.5 21Z" fill="#D97706" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="font-bold text-lg text-[#0B192C] tracking-tight">
+                3.SEC
+              </span>
+              <span className="text-[9px] font-semibold tracking-widest uppercase text-stone-500">
+                Business, Tax & Digital Solution
+              </span>
+            </div>
           </div>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(false)}
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-stone-600 hover:text-[#0B192C] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-stone-600 hover:text-[#0B192C] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C]"
             aria-label="Tutup navigasi"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,70 +199,46 @@ export default function Header({ lang, dictionary }: HeaderProps) {
           </button>
         </div>
 
-        {/* Drawer Body */}
-        <div className="p-6 space-y-6 flex-1">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-3 font-mono">
-              Navigasi Halaman
-            </p>
-            <div className="flex flex-col space-y-1.5">
-              {navItems.map((item) => {
-                const isActive =
-                  item.href === `/${lang}`
-                    ? pathname === `/${lang}`
-                    : pathname.startsWith(item.href);
+        {/* Drawer Nav Links */}
+        <div className="px-6 py-6 space-y-2 flex-1">
+          {navItems.map((item) => {
+            const isHash = item.href.includes('#');
+            const isActive =
+              !isHash &&
+              (item.href === `/${lang}`
+                ? pathname === `/${lang}`
+                : pathname.startsWith(item.href));
 
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`min-h-[48px] flex items-center justify-between px-4 py-3 rounded-xl text-base transition-colors ${
-                      isActive
-                        ? 'bg-[#0B192C] text-white font-semibold shadow-xs'
-                        : 'text-stone-700 hover:bg-stone-200/60 hover:text-[#0B192C] font-medium'
-                    }`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    <span>{item.label}</span>
-                    {isActive ? (
-                      <span className="w-2 h-2 rounded-full bg-[#14B8A6]" />
-                    ) : (
-                      <svg className="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    )}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Language Switcher Section inside drawer */}
-          <div className="pt-4 border-t border-stone-200">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-3 font-mono">
-              Bahasa / Language
-            </p>
-            <Suspense fallback={<div className="w-16 h-8 bg-stone-100 rounded-full" />}>
-              <LanguageSwitcher currentLocale={lang} />
-            </Suspense>
-          </div>
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                  isActive
+                    ? 'bg-rose-50 text-[#B91C1C] font-semibold'
+                    : 'text-stone-700 hover:bg-stone-100'
+                }`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                <span>{item.label}</span>
+                {isActive && <span className="w-2 h-2 rounded-full bg-[#B91C1C]" />}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Drawer Footer CTA */}
-        <div className="p-6 border-t border-stone-200 bg-[#F3F4F1] space-y-3 shrink-0">
+        {/* Drawer Footer Actions */}
+        <div className="p-6 border-t border-stone-200 bg-stone-50/80 space-y-3 shrink-0">
           <Link
             href={`/${lang}/contact`}
             aria-current={pathname.startsWith(`/${lang}/contact`) ? 'page' : undefined}
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full min-h-[48px] flex items-center justify-center px-4 py-3 text-sm font-semibold rounded-full bg-[#0B192C] text-white hover:bg-[#1E2E45] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
+            className="w-full min-h-[48px] flex items-center justify-center gap-1.5 px-4 py-3 text-sm font-semibold rounded-full bg-[#B91C1C] text-white hover:bg-[#991B1B] active:scale-95 transition-all shadow-sm"
           >
-            {dictionary.common.cta.consultation}
+            <span>{dictionary.common.cta.getInTouch || (isId ? 'Hubungi Kami' : 'Get in Touch')}</span>
+            <span>&rarr;</span>
           </Link>
-
-          <p className="text-xs text-stone-500 text-center leading-relaxed">
-            {dictionary.common.footerSummary}
-          </p>
         </div>
       </div>
     </header>

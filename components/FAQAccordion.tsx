@@ -48,7 +48,7 @@ export default function FAQAccordion({
 
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-xl">
             {subheading || (isId
-              ? 'Temukan jawaban ringkas seputar kolaborasi, keamanan data, dan mekanisme konsultasi bersama Wirasa.'
+              ? 'Temukan jawaban ringkas seputar kolaborasi, keamanan data, dan mekanisme konsultasi bersama 3.SEC .'
               : 'Here’s everything you need to know about our advisory workflows, data security, and how to get started.')}
           </p>
         </div>

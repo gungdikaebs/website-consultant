@@ -57,6 +57,16 @@ export interface TestimonialItem {
   avatarUrl?: string;
 }
 
+export interface WhyPillar {
+  title: string;
+  desc: string;
+}
+
+export interface MetricItem {
+  value: string;
+  label: string;
+}
+
 export interface Dictionary {
   meta: {
     homeTitle: string;
@@ -82,6 +92,8 @@ export interface Dictionary {
       about: string;
       consultation: string;
       discuss: string;
+      getInTouch?: string;
+      learnMore?: string;
     };
     footerSummary: string;
     rights: string;
@@ -90,9 +102,22 @@ export interface Dictionary {
   home: {
     heroEyebrow: string;
     heroH1: string;
+    heroH1Lead?: string;
+    heroH1Accent?: string;
     heroBody: string;
+    heroScriptBadge?: string;
     servicesHeading: string;
     servicesIntro: string;
+    aboutEyebrow?: string;
+    aboutHeadingLead?: string;
+    aboutHeadingAccent?: string;
+    aboutSummary?: string;
+    aboutScriptBadge?: string;
+    aboutMetrics?: MetricItem[];
+    whyEyebrow?: string;
+    whyHeadingLead?: string;
+    whyHeadingAccent?: string;
+    whyPillars?: WhyPillar[];
     clientsEyebrow: string;
     clientsHeading: string;
     clientsSubheading: string;

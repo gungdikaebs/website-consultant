@@ -2,21 +2,21 @@ import { Dictionary } from './types';
 
 export const enDictionary: Dictionary = {
   meta: {
-    homeTitle: 'Wirasa Business & Advisory | Tax, IT & Payroll',
+    homeTitle: '3.SEC | Business, Tax & Digital Solution',
     homeDesc:
-      'Explore Wirasa’s tax & accounting, website and application development, and payroll services for modern businesses, startups, and enterprises.',
-    serviceTitle: 'Tax & Accounting, IT & Payroll Services | Wirasa',
+      'Explore 3.SEC’s tax & accounting, digital solution, and payroll & HR consultant services for modern businesses, startups, and enterprises.',
+    serviceTitle: 'Tax & Accounting, Payroll & HR, Digital Solution | 3.SEC',
     serviceDesc:
-      'Learn about Wirasa’s tax & accounting advisory and administration, website and application development, and payroll management services.',
-    aboutTitle: 'About Wirasa Business & Advisory',
+      'Learn about 3.SEC’s tax & accounting advisory and administration, digital solution development, and payroll management services.',
+    aboutTitle: 'About 3.SEC | Business, Tax & Digital Solution',
     aboutDesc:
-      'Discover Wirasa Business & Advisory’s purpose and approach as an integrated tax & accounting, IT, and payroll partner for your business.',
-    contactTitle: 'Contact Wirasa Business & Advisory',
+      'Discover 3.SEC Business, Tax & Digital Solution’s purpose and approach as an integrated business, tax, and digital solution partner.',
+    contactTitle: 'Contact 3.SEC | Business, Tax & Digital Solution',
     contactDesc:
-      'Start a discussion about your business tax & accounting, website or application, and payroll needs with Wirasa Business & Advisory.',
+      'Start a discussion about your business tax & accounting, digital solution, and payroll needs with 3.SEC Business, Tax & Digital Solution.',
   },
   common: {
-    brand: 'Wirasa Business & Advisory',
+    brand: '3.SEC Business, Tax & Digital Solution',
     nav: {
       home: 'Home',
       service: 'Service',
@@ -25,10 +25,12 @@ export const enDictionary: Dictionary = {
     },
     cta: {
       primary: 'Discuss Your Business Needs',
-      services: 'Explore Our Services',
-      about: 'Meet Wirasa',
-      consultation: 'Start Consultation',
+      services: 'Our Services',
+      about: 'Meet 3.SEC',
+      consultation: 'Get a Consultation',
       discuss: 'Discuss Now',
+      getInTouch: 'Get in Touch',
+      learnMore: 'Learn More',
     },
     footerSummary:
       'Your trusted partner for business tax & accounting, IT, and payroll needs.',
@@ -36,13 +38,48 @@ export const enDictionary: Dictionary = {
     languageLabel: 'Language',
   },
   home: {
-    heroEyebrow: 'Wirasa Business & Advisory',
-    heroH1: 'One partner for your business finances, technology, and payroll.',
+    heroEyebrow: 'YOUR TRUSTED PARTNER',
+    heroH1: 'Better Numbers, Brighter Future.',
+    heroH1Lead: 'Better Numbers,',
+    heroH1Accent: 'Brighter Future.',
     heroBody:
-      'Every business has different needs. Wirasa helps you organise tax & accounting, develop websites and applications, and manage payroll through one point of contact that understands your requirements.',
-    servicesHeading: 'Support for three essential areas of your business.',
+      'We provide professional accounting, tax, and business advisory services to help you grow with confidence — today and tomorrow.',
+    heroScriptBadge: 'Your Growth, Our Priority',
+    servicesHeading: 'Our Core Services',
     servicesIntro:
       'Choose the support you need. We begin by understanding your business and agreeing on an appropriate scope of work.',
+    aboutEyebrow: 'ABOUT 3.SEC',
+    aboutHeadingLead: 'Professional Support for',
+    aboutHeadingAccent: 'Your Business Journey',
+    aboutSummary:
+      '3.SEC Business, Tax & Digital Solution is a consulting firm dedicated to delivering reliable, practical, and tailored solutions in accounting, tax, and business management. We combine professionalism, innovation, and a personal touch to help individuals and businesses achieve sustainable growth.',
+    aboutScriptBadge: 'Small Steps, Big Results',
+    aboutMetrics: [
+      { value: '7+', label: 'Years of Experience' },
+      { value: '100%', label: 'Client Satisfaction' },
+      { value: '50+', label: 'Businesses Supported' },
+    ],
+    whyEyebrow: 'WHY CHOOSE US',
+    whyHeadingLead: 'More Than Just',
+    whyHeadingAccent: 'Numbers',
+    whyPillars: [
+      {
+        title: 'Integrity',
+        desc: 'We value trust and transparency in every step.',
+      },
+      {
+        title: 'Tailored Solutions',
+        desc: 'Every business is unique, so are our strategies.',
+      },
+      {
+        title: 'Professional Team',
+        desc: 'Experienced, responsive, and ready to help.',
+      },
+      {
+        title: 'Long-Term Partnership',
+        desc: 'Your success is our long-term goal.',
+      },
+    ],
     clientsEyebrow: 'Our Clients & Sectors',
     clientsHeading: 'Trusted by Diverse Business Entities & Enterprises',
     clientsSubheading:
@@ -64,12 +101,12 @@ export const enDictionary: Dictionary = {
     testimonialsEyebrow: 'Testimonials',
     testimonialsHeading: 'Client Stories & Verified Experiences',
     testimonialsSubheading:
-      'Direct feedback from founders and operators who rely on Wirasa for their tax accounting, digital systems, and payroll management.',
+      'Direct feedback from founders and operators who rely on 3.SEC for their tax accounting, digital systems, and payroll management.',
     testimonialsList: [
       {
         id: 'review-1',
         quote:
-          'Managing corporate accounting and tax compliance felt daunting at first. The Wirasa team provided structured, transparent, and prompt guidance across every regulatory step.',
+          'Managing corporate accounting and tax compliance felt daunting at first. The 3.SEC team provided structured, transparent, and prompt guidance across every regulatory step.',
         author: 'Michael Huber',
         role: 'Managing Director',
         company: 'Pacific Living Group',
@@ -102,7 +139,7 @@ export const enDictionary: Dictionary = {
       {
         id: 'review-4',
         quote:
-          'Wirasa’s ability to combine modern cloud infrastructure with automated payroll and compliance reporting has saved our team countless hours with total reliability.',
+          '3.SEC’s ability to combine modern cloud infrastructure with automated payroll and compliance reporting has saved our team countless hours with total reliability.',
         author: 'Amanda Vance',
         role: 'VP of Engineering',
         company: 'Nexus Venture Labs',
@@ -159,7 +196,7 @@ export const enDictionary: Dictionary = {
     ],
     faqHeading: 'Frequently Asked Questions',
     faqIntro:
-      'Brief answers on how we collaborate and how to get started with Wirasa.',
+      'Brief answers on how we collaborate and how to get started with 3.SEC.',
     faqs: [
       {
         question: 'Do I need all three services?',
@@ -167,7 +204,7 @@ export const enDictionary: Dictionary = {
           'No. Start with the service you need and discuss additional support where relevant.',
       },
       {
-        question: 'Who are Wirasa’s services for?',
+        question: 'Who are 3.SEC’s services for?',
         answer:
           'Our advisory is designed for a broad range of businesses, from high-growth ventures to established corporations across diverse industries.',
       },
@@ -215,7 +252,7 @@ export const enDictionary: Dictionary = {
   about: {
     h1: 'Business support starts with understanding your needs.',
     profile:
-      'Wirasa Business & Advisory is built to bring tax & accounting, IT, and payroll support together under one reliable partner. We serve businesses, growing ventures, and modern enterprises across diverse industries.',
+      '3.SEC Business, Tax & Digital Solution is built to bring tax & accounting, digital solution, and payroll support together under one reliable partner. We serve businesses, growing ventures, and modern enterprises across diverse industries.',
     purposeHeading: 'Help businesses move forward with a clearer plan.',
     purposeBody:
       'We aim to help you understand your requirements, set priorities, and agree on relevant work. Each service begins with your business situation, rather than a package that requires every service.',
@@ -236,7 +273,7 @@ export const enDictionary: Dictionary = {
     ],
     teamHeading: 'Built on our team members’ experience.',
     teamBody:
-      'Some Wirasa team members have worked with clients before joining Wirasa. Their experience helps inform how we understand client needs and develop our service approach.',
+      'Some 3.SEC team members have worked with clients before joining 3.SEC. Their experience helps inform how we understand client needs and develop our service approach.',
     closingCta: 'Find the support that fits your business.',
   },
   contact: {
@@ -256,14 +293,14 @@ export const enDictionary: Dictionary = {
         desc: 'Bookkeeping consultations, financial reports, and tax administration.',
       },
       {
-        id: 'it',
-        label: 'IT Consultant',
-        desc: 'Website plans, business applications, and maintenance agreements.',
+        id: 'payroll',
+        label: 'Payroll & HR Consultant',
+        desc: 'Salary calculations, payslips, and comprehensive employee payroll & HR management.',
       },
       {
-        id: 'payroll',
-        label: 'Payroll Consultant',
-        desc: 'Salary calculations, payslips, and employee payroll management.',
+        id: 'it',
+        label: 'Digital Solution',
+        desc: 'Modern website plans, business applications, and digital systems.',
       },
     ],
     supportingHeading: 'What you can prepare.',
@@ -275,7 +312,7 @@ export const enDictionary: Dictionary = {
     primaryContactLabel: 'Primary Contact: WhatsApp',
     whatsappCta: 'Start a Conversation on WhatsApp',
     noNumberNotice:
-      'Wirasa’s contact details are being prepared. Our WhatsApp number will appear on this page once it is available.',
+      '3.SEC’s contact details are being prepared. Our WhatsApp number will appear on this page once it is available.',
     optionalLabels: {
       email: 'Email',
       address: 'Address',
@@ -284,12 +321,12 @@ export const enDictionary: Dictionary = {
   },
   whatsappMessages: {
     general:
-      'Hello Wirasa Business & Advisory, I would like to discuss my business needs.',
+      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss my business needs.',
     'tax-accounting':
-      'Hello Wirasa Business & Advisory, I would like to discuss Tax & Accounting services for my business.',
-    it:
-      'Hello Wirasa Business & Advisory, I would like to discuss website or application development for my business.',
+      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Tax & Accounting services for my business.',
     payroll:
-      'Hello Wirasa Business & Advisory, I would like to discuss payroll management for my business.',
+      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Payroll & HR Consultant services for my business.',
+    it:
+      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Digital Solution development for my business.',
   },
 };

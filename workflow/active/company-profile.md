@@ -1,4 +1,4 @@
-# Website company profile Wirasa Business & Advisory
+# Website company profile 3.SEC Business, Tax & Digital Solution
 
 Status artifact: ACTIVE — scope disetujui, contract dan draft copy siap handoff.
 
@@ -10,7 +10,7 @@ Frontend saja; backend, auth, database, CMS, dashboard, form submit, dan deploy 
 
 ## Persetujuan dan ownership
 
-Pengguna menyetujui hasil wawancara, memilih Home/Service/About/Kontak, lalu memberi arahan “Implement the plan”. Koreksi status bisnis: Wirasa belum beroperasi, tetapi beberapa anggota tim pernah menangani klien.
+Pengguna menyetujui hasil wawancara, memilih Home/Service/About/Kontak, lalu memberi arahan “Implement the plan”. Koreksi status bisnis: 3.SEC Consulting belum beroperasi, tetapi beberapa anggota tim pernah menangani klien.
 
 Jalur: STANDARD dengan handoff frontend lintas owner. Codex menyiapkan contract dan konten; Antigravity mengimplementasikan visual/frontend; Codex menjadi validator integrasi dan UX. Tidak ada sub-agent untuk perubahan dokumen berisiko rendah ini; pemeriksaan dilakukan Codex secara terarah.
 

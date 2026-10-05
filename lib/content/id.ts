@@ -30,7 +30,7 @@ export const idDictionary: Dictionary = {
       consultation: 'Mulai Konsultasi',
       discuss: 'Diskusikan Sekarang',
       getInTouch: 'Hubungi Kami',
-      learnMore: 'Pelajari Lebih Lanjut',
+      learnMore: 'Selengkapnya',
     },
     footerSummary:
       'Partner terpercaya untuk kebutuhan Tax & Accounting, IT, dan Payroll bisnis Anda.',
@@ -282,11 +282,6 @@ export const idDictionary: Dictionary = {
       'Ceritakan layanan yang Anda perlukan, kondisi bisnis saat ini, dan tujuan yang ingin dicapai. Informasi awal ini membantu kami mempersiapkan percakapan yang relevan.',
     selectorLabel: 'Apa yang ingin Anda diskusikan?',
     options: [
-      {
-        id: 'general',
-        label: 'Kebutuhan umum',
-        desc: 'Diskusi pendahuluan mengenai prioritas dan eksplorasi dukungan bisnis.',
-      },
       {
         id: 'tax-accounting',
         label: 'Tax & Accounting',

@@ -9,7 +9,7 @@ import { ContactConfig } from './types';
  * - Field null/kosong otomatis disembunyikan atau memicu state "detail kontak sedang disiapkan".
  */
 export const contactConfig: ContactConfig = {
-  whatsappNumber: null, // Kosong hingga nomor resmi diberikan pengguna
+  whatsappNumber: '62123456789', // Nomor resmi WhatsApp
   email: null,
   address: null,
   businessHours: null,
@@ -30,8 +30,8 @@ export function getValidWhatsAppNumber(number: string | null): string | null {
  */
 export function buildWhatsAppLink(
   number: string | null,
-  message: string,
-  lang: 'id' | 'en',
+  message?: string,
+  lang: 'id' | 'en' = 'id',
   serviceId?: string
 ): { href: string; isExternal: boolean } {
   const validNumber = getValidWhatsAppNumber(number);
@@ -40,6 +40,13 @@ export function buildWhatsAppLink(
       ? `/${lang}/contact?service=${encodeURIComponent(serviceId)}`
       : `/${lang}/contact`;
     return { href: fallbackPath, isExternal: false };
+  }
+
+  if (!message) {
+    return {
+      href: `https://wa.me/${validNumber}`,
+      isExternal: true,
+    };
   }
 
   const encodedText = encodeURIComponent(message);

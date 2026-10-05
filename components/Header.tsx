@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Locale, Dictionary } from '@/lib/content/types';
 import LanguageSwitcher from './LanguageSwitcher';
+import BrandLogo from './BrandLogo';
 
 interface HeaderProps {
   lang: Locale;
@@ -57,27 +58,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             className="group flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#B91C1C] rounded-md py-1"
             aria-label={dictionary.common.brand}
           >
-            {/* Geometric Prism Icon Logo (Navy, Crimson, Gold facets) */}
-            <svg
-              className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 transition-transform duration-300 group-hover:scale-105"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M4 9L17 28L13 34L2 13L4 9Z" fill="#0B192C" />
-              <path d="M17 28L11 9H17.5L21.5 21L17 28Z" fill="#B91C1C" />
-              <path d="M21.5 21L26.5 9H33L24 30.5L21.5 21Z" fill="#D97706" />
-            </svg>
-
-            <div className="flex flex-col">
-              <span className="font-bold text-lg sm:text-xl text-[#0B192C] tracking-tight group-hover:text-[#B91C1C] transition-colors leading-tight">
-                3.SEC
-              </span>
-              <span className="text-[10px] font-semibold tracking-widest uppercase text-stone-500 group-hover:text-stone-700 transition-colors leading-tight">
-                Business, Tax & Digital Solution
-              </span>
-            </div>
+            <BrandLogo />
           </Link>
 
           {/* Desktop Navigation Links: Clean Minimal Text */}
@@ -172,21 +153,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
       >
         {/* Drawer Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-stone-200 shrink-0">
-          <div className="flex items-center gap-2">
-            <svg className="w-7 h-7 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 9L17 28L13 34L2 13L4 9Z" fill="#0B192C" />
-              <path d="M17 28L11 9H17.5L21.5 21L17 28Z" fill="#B91C1C" />
-              <path d="M21.5 21L26.5 9H33L24 30.5L21.5 21Z" fill="#D97706" />
-            </svg>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-[#0B192C] tracking-tight">
-                3.SEC
-              </span>
-              <span className="text-[9px] font-semibold tracking-widest uppercase text-stone-500">
-                Business, Tax & Digital Solution
-              </span>
-            </div>
-          </div>
+          <span aria-label={dictionary.common.brand} role="img">
+            <BrandLogo />
+          </span>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(false)}

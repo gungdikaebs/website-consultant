@@ -5,6 +5,7 @@ import { isValidLocale, getDictionary, LOCALES } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import SmoothScroll from '@/components/SmoothScroll';
 import GSAPReveal from '@/components/GSAPReveal';
 import '../globals.css';
@@ -84,6 +85,7 @@ export default async function LocaleLayout({
           <Header lang={validLang} dictionary={dict} />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer lang={validLang} dictionary={dict} />
+          <FloatingWhatsApp lang={validLang} dictionary={dict} />
         </SmoothScroll>
       </body>
     </html>

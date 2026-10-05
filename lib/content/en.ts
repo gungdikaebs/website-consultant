@@ -44,7 +44,6 @@ export const enDictionary: Dictionary = {
     heroH1Accent: 'Brighter Future.',
     heroBody:
       'We provide professional accounting, tax, and business advisory services to help you grow with confidence — today and tomorrow.',
-    heroScriptBadge: 'Your Growth, Our Priority',
     servicesHeading: 'Our Core Services',
     servicesIntro:
       'Choose the support you need. We begin by understanding your business and agreeing on an appropriate scope of work.',

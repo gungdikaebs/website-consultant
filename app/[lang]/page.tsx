@@ -180,28 +180,33 @@ export default async function HomePage({
             {/* Right Column: Ulun Danu Beratan Bali Temple with Flowing Ribbon & Gold Script */}
             <div className="lg:col-span-6 relative">
               <div className="relative w-full max-w-lg lg:max-w-none mx-auto">
-                {/* Dynamic Gradient Ribbon Frame Behind Photo */}
-                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-full h-full rounded-[40px] sm:rounded-[52px] bg-gradient-to-tr from-[#D97706]/20 via-[#B91C1C]/15 to-transparent -rotate-1 pointer-events-none" />
-
-                {/* Main Temple Photo Container */}
-                <div className="relative aspect-[4/3] rounded-[32px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-2xl bg-sky-100 group">
+                {/* Background Doubled Photo (Layered Stack Card) */}
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-full h-full rounded-[32px] sm:rounded-[44px] overflow-hidden border-4 border-white/90 shadow-xl bg-slate-900 rotate-2 pointer-events-none">
                   <Image
-                    src="/images/bali-temple.jpg"
-                    alt="Pura Ulun Danu Beratan Bali - 3.SEC Business, Tax & Digital Solution"
+                    src="/images/hero-todo.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center opacity-85"
+                  />
+                  <div className="absolute inset-0 bg-[#0B192C]/20 pointer-events-none" />
+                </div>
+
+                {/* Main Hero Photo Container */}
+                <div className="relative z-10 aspect-[4/3] rounded-[32px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-2xl bg-slate-900 group">
+                  <Image
+                    src="/images/hero-todo.png"
+                    alt="Digital Business Solution &amp; Task Management - 3.SEC Business, Tax &amp; Digital Solution"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C]/25 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Floating Handwritten Script Badge: "Your Growth, Our Priority" */}
-                <div className="absolute -bottom-6 -right-2 sm:right-6 z-20 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-2.5 sm:py-3 rounded-2xl shadow-xl border border-amber-200/90 -rotate-3 select-none">
-                  <span className="font-[family-name:var(--font-caveat)] text-2xl sm:text-3xl font-bold text-[#B45309] block leading-tight tracking-wide">
-                    {dict.home.heroScriptBadge || 'Your Growth, Our Priority'}
-                  </span>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -246,7 +251,7 @@ export default async function HomePage({
                     href={`/${validLang}/service#${srv.id}`}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#B91C1C] group-hover:text-[#991B1B] transition-colors"
                   >
-                    <span>{dict.common.cta.learnMore || (isId ? 'Pelajari Lebih Lanjut' : 'Learn More')}</span>
+                    <span>{dict.common.cta.learnMore || (isId ? 'selengkapnya' : 'Learn More')}</span>
                     <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </Link>
                 </div>
@@ -279,8 +284,8 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Center Column: Narrative & Learn More */}
-          <div className="lg:col-span-4 space-y-5">
+          {/* Right Column: Narrative & Learn More */}
+          <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2">
               <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
                 {dict.home.aboutEyebrow || (isId ? 'TENTANG 3.SEC' : 'ABOUT 3.SEC')}
@@ -294,7 +299,7 @@ export default async function HomePage({
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-2xl">
               {dict.home.aboutSummary || dict.about.profile}
             </p>
 
@@ -303,14 +308,11 @@ export default async function HomePage({
                 href={`/${validLang}/about`}
                 className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-full border border-[#D97706] hover:border-[#B45309] bg-white hover:bg-amber-50/50 text-[#0B192C] font-semibold text-xs sm:text-sm transition-all shadow-2xs"
               >
-                <span>{dict.common.cta.learnMore || (isId ? 'Pelajari Lebih Lanjut' : 'Learn More')}</span>
+                <span>{dict.common.cta.learnMore || (isId ? 'Selengkapnya' : 'Learn More')}</span>
                 <span className="ml-2 font-sans">&rarr;</span>
               </Link>
             </div>
           </div>
-
-          {/* Right Column: 3 Vertical Credibility Metrics Cards */}
-        
         </div>
       </section>
 

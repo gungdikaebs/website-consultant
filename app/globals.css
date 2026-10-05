@@ -1,26 +1,106 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-serif: var(--font-lora), Georgia, 'Times New Roman', serif;
+    --font-heading: var(--font-lora), Georgia, 'Times New Roman', serif;
+    --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
+    --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+    --bg-canvas: #fbfbf9;
+    --bg-canvas-subtle: #f3f4f1;
+    --bg-surface: #ffffff;
+
+    --color-navy: #0b192c;
+    --color-navy-hover: #172a45;
+    --color-navy-light: #1e2e45;
+
+    --color-teal: #0f766e;
+    --color-teal-dark: #115e59;
+    --color-teal-tint: #f0fdfa;
+    --color-teal-border: #ccfbf1;
+
+    --color-text-primary: #0b192c;
+    --color-text-body: #334155;
+    --color-text-muted: #475569;
+    --color-text-subtle: #64748b;
+
+    --color-border: #e2e8f0;
+    --color-border-dark: #cbd5e1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Infinite Smooth Logo Marquee (60fps/120fps GPU Composite) */
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 34s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
 }

@@ -145,10 +145,10 @@ export default async function HomePage({
               {/* 2-Tone Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-[60px] font-extrabold tracking-tight leading-[1.12]">
                 <span className="text-[#0B192C] block">
-                  {dict.home.heroH1Lead || 'Better Numbers,'}
+                  {dict.home.heroH1Lead || 'Empowering Business.'}
                 </span>
                 <span className="text-[#B91C1C] block">
-                  {dict.home.heroH1Accent || 'Brighter Future.'}
+                  {dict.home.heroH1Accent || 'Enabling Growth.'}
                 </span>
               </h1>
 
@@ -311,60 +311,78 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* 4. Why Choose Us Section: More Than Just Numbers */}
-      <section id="why-us" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
-        <div data-gsap="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-12 sm:mb-16">
-          <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
-            {dict.home.whyEyebrow || (isId ? 'MENGAPA MEMILIH KAMI' : 'WHY CHOOSE US')}
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B192C] tracking-tight">
-            {dict.home.whyHeadingLead || (isId ? 'Lebih Dari Sekadar' : 'More Than Just')}{' '}
-            <span className="text-[#D97706]">
-              {dict.home.whyHeadingAccent || (isId ? 'Angka' : 'Numbers')}
+      {/* 4. Why Choose Us Section: Practical Solutions. Lasting Value with White Background & Pinterest Image */}
+      <section id="why-us" className="relative scroll-mt-24 w-full py-16 sm:py-24 bg-white border-y border-stone-200/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div data-gsap="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-12 sm:mb-16">
+            <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
+              {dict.home.whyEyebrow || (isId ? 'MENGAPA MEMILIH KAMI' : 'WHY CHOOSE US')}
             </span>
-          </h2>
-        </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B192C] tracking-tight">
+              {dict.home.whyHeadingLead || (isId ? 'Solusi Praktis.' : 'Practical Solutions.')}{' '}
+              <span className="text-[#D97706]">
+                {dict.home.whyHeadingAccent || (isId ? 'Nilai Berkelanjutan' : 'Lasting Value')}
+              </span>
+            </h2>
+          </div>
 
-        <div data-gsap="stagger-group" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {(dict.home.whyPillars || [
-            {
-              title: isId ? 'Integritas' : 'Integrity',
-              desc: isId ? 'Kami mengedepankan kepercayaan dan transparansi di setiap langkah.' : 'We value trust and transparency in every step.',
-            },
-            {
-              title: isId ? 'Solusi Tepat Guna' : 'Tailored Solutions',
-              desc: isId ? 'Setiap bisnis memiliki keunikan, begitu pula strategi yang kami tawarkan.' : 'Every business is unique, so are our strategies.',
-            },
-            {
-              title: isId ? 'Tim Profesional' : 'Professional Team',
-              desc: isId ? 'Berpengalaman, responsif, dan siap mendampingi kebutuhan Anda.' : 'Experienced, responsive, and ready to help.',
-            },
-            {
-              title: isId ? 'Kemitraan Jangka Panjang' : 'Long-Term Partnership',
-              desc: isId ? 'Keberhasilan Anda adalah tujuan jangka panjang kami.' : 'Your success is our long-term goal.',
-            },
-          ]).map((pillar, idx) => {
-            const iconMeta = whyIcons[idx] || whyIcons[0];
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-stone-200/90 shadow-2xs hover:shadow-md transition-all text-center flex flex-col items-center space-y-4 group"
-              >
-                <div className={`w-13 h-13 rounded-2xl flex items-center justify-center border ${iconMeta.bg} shadow-2xs group-hover:scale-110 transition-transform`}>
-                  {iconMeta.icon}
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* 4 Pillars in a 2x2 grid */}
+            <div data-gsap="stagger-group" className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+              {(dict.home.whyPillars || [
+                {
+                  title: isId ? 'Integritas' : 'Integrity',
+                  desc: isId ? 'Kami mengedepankan kepercayaan dan transparansi di setiap langkah.' : 'We value trust and transparency in every step.',
+                },
+                {
+                  title: isId ? 'Solusi Tepat Guna' : 'Tailored Solutions',
+                  desc: isId ? 'Setiap bisnis memiliki keunikan, begitu pula strategi yang kami tawarkan.' : 'Every business is unique, so are our strategies.',
+                },
+                {
+                  title: isId ? 'Tim Profesional' : 'Professional Team',
+                  desc: isId ? 'Berpengalaman, responsif, dan siap mendampingi kebutuhan Anda.' : 'Experienced, responsive, and ready to help.',
+                },
+                {
+                  title: isId ? 'Kemitraan Jangka Panjang' : 'Long-Term Partnership',
+                  desc: isId ? 'Keberhasilan Anda adalah tujuan jangka panjang kami.' : 'Your success is our long-term goal.',
+                },
+              ]).map((pillar, idx) => {
+                const iconMeta = whyIcons[idx] || whyIcons[0];
+                return (
+                  <div
+                    key={idx}
+                    className="bg-[#FBFBF9] hover:bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-stone-200/90 shadow-2xs hover:shadow-md hover:border-amber-300/80 transition-all duration-300 text-center flex flex-col items-center space-y-4 group"
+                  >
+                    <div className={`w-13 h-13 rounded-2xl flex items-center justify-center border ${iconMeta.bg} shadow-2xs group-hover:scale-110 transition-transform`}>
+                      {iconMeta.icon}
+                    </div>
 
-                <div className="space-y-2">
-                  <h3 className="font-bold text-lg text-[#0B192C] tracking-tight">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    {pillar.desc}
-                  </p>
-                </div>
+                    <div className="space-y-2">
+                      <h3 className="font-bold text-lg text-[#0B192C] tracking-tight">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Pinterest Reference Photo */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-square w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-md bg-stone-100 group">
+                <Image
+                  src="/images/why-us-bg.jpg"
+                  alt="3.SEC Business Advisory & Strategic Growth"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </section>
 

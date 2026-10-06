@@ -152,6 +152,7 @@ export interface Dictionary {
     profile: string;
     purposeHeading: string;
     purposeBody: string;
+    purposeBodySecondary?: string;
     approachHeading: string;
     approachPoints: ApproachPoint[];
     teamHeading: string;

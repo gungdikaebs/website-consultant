@@ -53,7 +53,7 @@ export default function ContactSelector({ lang, dictionary }: ContactSelectorPro
           <div
             role="radiogroup"
             aria-label={dictionary.contact.selectorLabel}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            className="flex flex-col gap-3.5"
           >
             {dictionary.contact.options.map((option) => {
               const isSelected = selectedService === option.id;

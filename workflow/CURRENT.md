@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Seluruh istilah 'audit' telah dibersihkan dari konten bahasa Indonesia dan bahasa Inggris (diselaraskan menjadi 'pelaporan keuangan' pada testimoni klien di `lib/content/id.ts`); footer diselaraskan dengan logo baru dan floating WhatsApp interaktif terpasang optimal.
+- Working tree: Section "Why Choose Us" (`app/[lang]/page.tsx`) telah diubah berlatar belakang putih bersih (`bg-white`) dengan 4 kartu pilar (grid 2x2) bersanding harmonis dengan foto jabat tangan & grafik pertumbuhan hologram dari Pinterest (`/images/why-us-bg.jpg`); lint dan build 100% lolos.
 - Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), `npm run build` PASS (12/12 static SSG routes).
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

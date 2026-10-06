@@ -39,9 +39,9 @@ export const enDictionary: Dictionary = {
   },
   home: {
     heroEyebrow: 'YOUR TRUSTED PARTNER',
-    heroH1: 'Better Numbers, Brighter Future.',
-    heroH1Lead: 'Better Numbers,',
-    heroH1Accent: 'Brighter Future.',
+    heroH1: 'Empowering Business. Enabling Growth.',
+    heroH1Lead: 'Empowering Business.',
+    heroH1Accent: 'Enabling Growth.',
     heroBody:
       'We provide professional accounting, tax, and business advisory services to help you grow with confidence — today and tomorrow.',
     servicesHeading: 'Our Core Services',
@@ -51,15 +51,15 @@ export const enDictionary: Dictionary = {
     aboutHeadingLead: 'Professional Support for',
     aboutHeadingAccent: 'Your Business Journey',
     aboutSummary:
-      '3.SEC Business, Tax & Digital Solution is a consulting firm dedicated to delivering reliable, practical, and tailored solutions in accounting, tax, and business management. We combine professionalism, innovation, and a personal touch to help individuals and businesses achieve sustainable growth.',
+      '3.SEC Business, Tax & Digital Solutions is a professional consulting and business solutions firm providing integrated services across business support, accounting, tax, human resources, payroll, and digital solutions. We help individuals and businesses manage their day-to-day operations, strengthen financial and administrative processes, stay compliant, and leverage technology to work more efficiently and grow sustainably.',
     aboutMetrics: [
       { value: '7+', label: 'Years of Experience' },
       { value: '100%', label: 'Client Satisfaction' },
       { value: '50+', label: 'Businesses Supported' },
     ],
     whyEyebrow: 'WHY CHOOSE US',
-    whyHeadingLead: 'More Than Just',
-    whyHeadingAccent: 'Numbers',
+    whyHeadingLead: 'Practical Solutions.',
+    whyHeadingAccent: 'Lasting Value',
     whyPillars: [
       {
         title: 'Integrity',
@@ -250,10 +250,12 @@ export const enDictionary: Dictionary = {
   about: {
     h1: 'Business support starts with understanding your needs.',
     profile:
-      '3.SEC Business, Tax & Digital Solution is built to bring tax & accounting, digital solution, and payroll support together under one reliable partner. We serve businesses, growing ventures, and modern enterprises across diverse industries.',
+      '3.SEC Business, Tax & Digital Solutions is a professional consulting and business solutions firm providing integrated services across business support, accounting, tax, human resources, payroll, and digital solutions. We help individuals and businesses manage their day-to-day operations, strengthen financial and administrative processes, stay compliant, and leverage technology to work more efficiently and grow sustainably.',
     purposeHeading: 'Help businesses move forward with a clearer plan.',
     purposeBody:
-      'We aim to help you understand your requirements, set priorities, and agree on relevant work. Each service begins with your business situation, rather than a package that requires every service.',
+      'Our services cover bookkeeping and accounting, tax compliance and advisory, payroll and HR administration, business support, website and web application development, process automation, and AI-powered digital solutions. We combine professional expertise with practical, tailored solutions designed to address the unique needs and challenges of every client.',
+    purposeBodySecondary:
+      'At 3.SEC, we believe that effective professional services go beyond solving immediate problems. We aim to create better processes, clearer information, smarter decisions, and more efficient operations—helping our clients build stronger businesses and achieve sustainable growth.',
     approachHeading: 'How we build a working relationship.',
     approachPoints: [
       {

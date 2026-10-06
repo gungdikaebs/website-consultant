@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
@@ -34,35 +35,52 @@ export default async function ServicePage({
 
   return (
     <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 py-12 sm:py-16 lg:py-20">
-      {/* 1. Page Header & Quick Navigation */}
+      {/* 1. Page Header & Quick Navigation with Image */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-3xl space-y-6">
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
-            Layanan 3.SEC / Our Services
-          </span>
-          <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
-            {dict.service.h1}
-          </h1>
-          <p className="text-lg sm:text-xl text-stone-600 leading-relaxed font-normal">
-            {dict.service.intro}
-          </p>
-
-          {/* In-page Anchor Navigation Pills */}
-          <div className="pt-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-500 font-mono mb-3">
-              {dict.service.navLabel}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Heading, Intro & Anchor Navigation */}
+          <div className="lg:col-span-7 space-y-6">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
+              {validLang === 'id' ? 'Layanan 3.SEC / Direktori Layanan' : 'Layanan 3.SEC / Our Services'}
+            </span>
+            <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
+              {dict.service.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-stone-600 leading-relaxed font-normal">
+              {dict.service.intro}
             </p>
-            <div className="flex flex-wrap gap-2.5">
-              {services.map((srv) => (
-                <a
-                  key={srv.id}
-                  href={`#${srv.id}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-300 text-xs sm:text-sm font-semibold text-[#0B192C] hover:border-[#0F766E] hover:text-[#0F766E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]"
-                >
-                  <span className="font-mono text-xs text-[#0F766E]">{srv.index}</span>
-                  <span>{srv.title}</span>
-                </a>
-              ))}
+
+            {/* In-page Anchor Navigation Pills */}
+            <div className="pt-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-stone-500 font-mono mb-3">
+                {dict.service.navLabel}
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {services.map((srv) => (
+                  <a
+                    key={srv.id}
+                    href={`#${srv.id}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-300 text-xs sm:text-sm font-semibold text-[#0B192C] hover:border-[#0F766E] hover:text-[#0F766E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E] shadow-2xs"
+                  >
+                    <span className="font-mono text-xs font-bold text-[#0F766E]">{srv.index}</span>
+                    <span>{srv.title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Image from Pinterest Reference */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-md bg-stone-100 group">
+              <Image
+                src="/images/service-hero-bg.jpg"
+                alt="3.SEC Client Satisfaction & Strategic Partnership"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
         </div>

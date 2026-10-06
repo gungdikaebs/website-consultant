@@ -94,11 +94,11 @@ export default async function AboutPage({
           <p>
             {dict.about.purposeBody}
           </p>
-          <p className="text-stone-600 text-sm sm:text-base">
-            {validLang === 'id'
-              ? 'Dalam lanskap bisnis modern, pemisahan yang kaku antara pelaporan pajak, arsitektur IT, dan tata kelola penggajian sering kali menimbulkan gesekan koordinasi. Kami menghubungkan ketiganya agar para pendiri bisnis dapat memfokuskan energi pada pertumbuhan tanpa mengabaikan kepatuhan dan keandalan sistem.'
-              : 'In modern commerce, rigid separations between tax compliance, IT systems, and payroll management often generate costly friction. We integrate these core pillars so founders can focus their energy on core growth while maintaining rigorous compliance and system stability.'}
-          </p>
+          {dict.about.purposeBodySecondary && (
+            <p className="text-stone-700 leading-relaxed text-base sm:text-lg font-normal">
+              {dict.about.purposeBodySecondary}
+            </p>
+          )}
         </div>
       </section>
 

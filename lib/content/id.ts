@@ -39,9 +39,9 @@ export const idDictionary: Dictionary = {
   },
   home: {
     heroEyebrow: 'MITRA TERPERCAYA ANDA',
-    heroH1: 'Better Numbers, Brighter Future.',
-    heroH1Lead: 'Better Numbers,',
-    heroH1Accent: 'Brighter Future.',
+    heroH1: 'Empowering Business. Enabling Growth.',
+    heroH1Lead: 'Empowering Business.',
+    heroH1Accent: 'Enabling Growth.',
     heroBody:
       'Kami menyediakan layanan akuntansi profesional, perpajakan, payroll, dan solusi digital terpadu untuk membantu bisnis Anda bertumbuh dengan percaya diri — hari ini dan masa depan.',
     heroScriptBadge: 'Your Growth, Our Priority',
@@ -52,15 +52,15 @@ export const idDictionary: Dictionary = {
     aboutHeadingLead: 'Dukungan Profesional untuk',
     aboutHeadingAccent: 'Perjalanan Bisnis Anda',
     aboutSummary:
-      '3.SEC Business, Tax & Digital Solution adalah firma penasihat dan konsultasi yang berdedikasi menghadirkan solusi akuntansi, perpajakan, payroll, dan solusi digital yang terstruktur, praktis, dan disesuaikan dengan kebutuhan Anda. Kami memadukan profesionalisme, inovasi teknologi, dan pendekatan personal untuk mendorong pertumbuhan bisnis yang berkelanjutan.',
+      '3.SEC Business, Tax & Digital Solutions adalah firma konsultasi dan solusi bisnis profesional yang menghadirkan layanan terpadu mencakup pendampingan bisnis, akuntansi, perpajakan, pengelolaan SDM, payroll, dan solusi digital. Kami membantu individu maupun entitas bisnis mengelola operasional harian, memperkuat tata kelola proses keuangan dan administrasi, memastikan kepatuhan regulasi, serta memanfaatkan teknologi agar dapat beroperasi lebih efisien dan bertumbuh secara berkelanjutan.',
     aboutMetrics: [
       { value: '7+', label: 'Tahun Pengalaman' },
       { value: '100%', label: 'Kepuasan Klien' },
       { value: '50+', label: 'Bisnis Didampingi' },
     ],
     whyEyebrow: 'MENGAPA MEMILIH KAMI',
-    whyHeadingLead: 'Lebih Dari Sekadar',
-    whyHeadingAccent: 'Angka',
+    whyHeadingLead: 'Solusi Praktis.',
+    whyHeadingAccent: 'Nilai Berkelanjutan',
     whyPillars: [
       {
         title: 'Integritas',
@@ -251,10 +251,12 @@ export const idDictionary: Dictionary = {
   about: {
     h1: 'Pendampingan bisnis dimulai dengan memahami kebutuhan Anda.',
     profile:
-      '3.SEC Business, Tax & Digital Solution dibangun untuk mempertemukan dukungan Tax & Accounting, Digital Solution, dan Payroll & HR melalui satu partner terpercaya. Kami melayani berbagai jenis entitas bisnis dan perusahaan modern dari berbagai industri.',
+      '3.SEC Business, Tax & Digital Solutions adalah firma konsultasi dan solusi bisnis profesional yang menghadirkan layanan terpadu mencakup pendampingan bisnis, akuntansi, perpajakan, pengelolaan SDM, payroll, dan solusi digital. Kami membantu individu maupun entitas bisnis mengelola operasional harian, memperkuat tata kelola proses keuangan dan administrasi, memastikan kepatuhan regulasi, serta memanfaatkan teknologi agar dapat beroperasi lebih efisien dan bertumbuh secara berkelanjutan.',
     purposeHeading: 'Membantu bisnis mengambil langkah yang lebih terarah.',
     purposeBody:
-      'Kami ingin membantu Anda memahami kebutuhan, menentukan prioritas, dan menyepakati pekerjaan yang relevan. Setiap layanan dimulai dari kondisi bisnis Anda, bukan dari paket yang harus digunakan seluruhnya.',
+      'Layanan kami mencakup pembukuan dan akuntansi, kepatuhan dan konsultasi perpajakan, administrasi payroll dan SDM, pendampingan bisnis, pengembangan website dan aplikasi web, otomatisasi proses bisnis, serta solusi digital berbasis AI. Kami memadukan keahlian profesional dengan solusi praktis dan terpersonalisasi yang dirancang khusus untuk menjawab kebutuhan serta tantangan unik setiap klien.',
+    purposeBodySecondary:
+      'Di 3.SEC, kami percaya bahwa layanan profesional yang efektif lebih dari sekadar menyelesaikan masalah jangka pendek. Kami berkomitmen menciptakan proses yang lebih baik, informasi yang lebih transparan, pengambilan keputusan yang lebih cerdas, dan operasional yang lebih efisien—membantu klien kami membangun bisnis yang lebih tangguh dan mencapai pertumbuhan yang berkelanjutan.',
     approachHeading: 'Cara kami membangun kerja sama.',
     approachPoints: [
       {

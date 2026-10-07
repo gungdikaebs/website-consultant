@@ -431,7 +431,7 @@ export default async function HomePage({
           </div>
 
           {/* Map Container / Iframe Slot */}
-          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 relative">
+          <div className="w-[80%] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 relative">
             {/* 
               ============================================================
               SLOT IFRAME GOOGLE MAPS

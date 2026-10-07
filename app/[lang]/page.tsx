@@ -137,7 +137,7 @@ export default async function HomePage({
             <div className="lg:col-span-6 space-y-6 sm:space-y-8">
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2">
-                <span className="font-mono text-xs sm:text-sm font-bold tracking-widest text-[#0284C7] uppercase">
+                <span className="md:pt-0 pt-8 font-mono text-xs sm:text-sm font-bold tracking-widest text-[#0284C7] uppercase">
                   {dict.home.heroEyebrow}
                 </span>
               </div>
@@ -431,7 +431,7 @@ export default async function HomePage({
           </div>
 
           {/* Map Container / Iframe Slot */}
-          <div className="w-[80%] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 relative">
+          <div className="w-full md:w-[80%] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 relative">
             {/* 
               ============================================================
               SLOT IFRAME GOOGLE MAPS
@@ -451,7 +451,7 @@ export default async function HomePage({
           </div>
 
           {/* Location Meta Details */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div className="w-full md:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1.5">
               <span className="font-mono text-xs font-bold text-[#0284C7] uppercase block">
                 {isId ? 'Alamat Kantor' : 'Office Address'}

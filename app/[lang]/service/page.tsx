@@ -138,12 +138,29 @@ export default async function ServicePage({
                     {dict.service.scopeLabel}
                   </h4>
                   <ul className="space-y-3">
-                    {srv.draftScope.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-stone-700 leading-relaxed">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0F766E] shrink-0 mt-2" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
+                    {srv.draftScope.map((item, idx) => {
+                      const hasDivider = item.includes(' — ');
+                      if (hasDivider) {
+                        const [title, ...rest] = item.split(' — ');
+                        const desc = rest.join(' — ');
+                        return (
+                          <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#0F766E] shrink-0 mt-2" />
+                            <span>
+                              <strong className="font-semibold text-[#0B192C]">{title}</strong>
+                              <span className="text-stone-400 mx-1.5">&mdash;</span>
+                              <span className="text-stone-600">{desc}</span>
+                            </span>
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-stone-700 leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0F766E] shrink-0 mt-2" />
+                          <span>{item}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 

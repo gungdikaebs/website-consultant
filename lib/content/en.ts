@@ -234,10 +234,10 @@ export const enDictionary: Dictionary = {
   service: {
     h1: 'Three service areas. One business partner.',
     intro:
-      'From financial records to application development and payroll management, choose support that fits your business priorities.',
+      'From financial records to process automation and payroll management, choose support that fits your business priorities.',
     navLabel: 'Service Section Navigation',
     deliverablesLabel: 'Deliverables to discuss',
-    scopeLabel: 'Draft scope',
+    scopeLabel: 'Service',
     sharedProcessHeading: 'Collaboration Process',
     sharedProcess: [
       'Share your requirements with our team.',
@@ -253,7 +253,7 @@ export const enDictionary: Dictionary = {
       '3.SEC Business, Tax & Digital Solutions is a professional consulting and business solutions firm providing integrated services across business support, accounting, tax, human resources, payroll, and digital solutions. We help individuals and businesses manage their day-to-day operations, strengthen financial and administrative processes, stay compliant, and leverage technology to work more efficiently and grow sustainably.',
     purposeHeading: 'Help businesses move forward with a clearer plan.',
     purposeBody:
-      'Our services cover bookkeeping and accounting, tax compliance and advisory, payroll and HR administration, business support, website and web application development, process automation, and AI-powered digital solutions. We combine professional expertise with practical, tailored solutions designed to address the unique needs and challenges of every client.',
+      'Our services cover bookkeeping and accounting, tax compliance and advisory, payroll and HR administration, business support, website development, process automation, and AI-powered digital solutions. We combine professional expertise with practical, tailored solutions designed to address the unique needs and challenges of every client.',
     purposeBodySecondary:
       'At 3.SEC, we believe that effective professional services go beyond solving immediate problems. We aim to create better processes, clearer information, smarter decisions, and more efficient operations—helping our clients build stronger businesses and achieve sustainable growth.',
     approachHeading: 'How we build a working relationship.',
@@ -289,13 +289,13 @@ export const enDictionary: Dictionary = {
       },
       {
         id: 'payroll',
-        label: 'Payroll & HR Consultant',
-        desc: 'Salary calculations, payslips, and comprehensive employee payroll & HR management.',
+        label: 'Payroll & HR Management',
+        desc: 'Salary calculations, HRIS setup, payslips, and comprehensive employee payroll & HR administration.',
       },
       {
         id: 'it',
         label: 'Digital Solution',
-        desc: 'Modern website plans, business applications, and digital systems.',
+        desc: 'Modern website plans, business process automation, and digital solutions.',
       },
     ],
     supportingHeading: 'What you can prepare.',
@@ -320,7 +320,7 @@ export const enDictionary: Dictionary = {
     'tax-accounting':
       'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Tax & Accounting services for my business.',
     payroll:
-      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Payroll & HR Consultant services for my business.',
+      'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Payroll & HR Management services for my business.',
     it:
       'Hello 3.SEC Business, Tax & Digital Solution, I would like to discuss Digital Solution development for my business.',
   },

@@ -77,7 +77,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   className="hover:text-white hover:translate-x-1 inline-flex items-center transition-all group"
                 >
                   <span className="font-medium text-stone-200 group-hover:text-amber-300 transition-colors">
-                    Payroll &amp; HR Consultant
+                    Payroll &amp; HR Management
                   </span>
                 </Link>
                 <p className="text-xs text-stone-500 mt-0.5 leading-relaxed">
@@ -94,7 +94,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   </span>
                 </Link>
                 <p className="text-xs text-stone-500 mt-0.5 leading-relaxed">
-                  {isId ? 'Aplikasi web modern, sistem cloud, & integrasi' : 'Web applications, cloud architecture & systems'}
+                  {isId ? 'Website modern, otomatisasi proses, & solusi digital' : 'Modern websites, process automation & digital systems'}
                 </p>
               </li>
             </ul>

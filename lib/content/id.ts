@@ -235,10 +235,10 @@ export const idDictionary: Dictionary = {
   service: {
     h1: 'Tiga bidang layanan. Satu partner bisnis.',
     intro:
-      'Dari pencatatan keuangan hingga pengembangan aplikasi dan pengelolaan payroll, pilih dukungan yang sesuai dengan prioritas bisnis Anda.',
+      'Dari pencatatan keuangan hingga otomatisasi proses dan pengelolaan payroll, pilih dukungan yang sesuai dengan prioritas bisnis Anda.',
     navLabel: 'Navigasi Bagian Layanan',
     deliverablesLabel: 'Hasil yang dibahas',
-    scopeLabel: 'Cakupan pekerjaan',
+    scopeLabel: 'Layanan',
     sharedProcessHeading: 'Proses Kerja Sama',
     sharedProcess: [
       'Ceritakan kebutuhan Anda kepada tim kami.',
@@ -254,7 +254,7 @@ export const idDictionary: Dictionary = {
       '3.SEC Business, Tax & Digital Solutions adalah firma konsultasi dan solusi bisnis profesional yang menghadirkan layanan terpadu mencakup pendampingan bisnis, akuntansi, perpajakan, pengelolaan SDM, payroll, dan solusi digital. Kami membantu individu maupun entitas bisnis mengelola operasional harian, memperkuat tata kelola proses keuangan dan administrasi, memastikan kepatuhan regulasi, serta memanfaatkan teknologi agar dapat beroperasi lebih efisien dan bertumbuh secara berkelanjutan.',
     purposeHeading: 'Membantu bisnis mengambil langkah yang lebih terarah.',
     purposeBody:
-      'Layanan kami mencakup pembukuan dan akuntansi, kepatuhan dan konsultasi perpajakan, administrasi payroll dan SDM, pendampingan bisnis, pengembangan website dan aplikasi web, otomatisasi proses bisnis, serta solusi digital berbasis AI. Kami memadukan keahlian profesional dengan solusi praktis dan terpersonalisasi yang dirancang khusus untuk menjawab kebutuhan serta tantangan unik setiap klien.',
+      'Layanan kami mencakup pembukuan dan akuntansi, kepatuhan dan konsultasi perpajakan, administrasi payroll dan SDM, pendampingan bisnis, pengembangan website profesional, otomatisasi proses bisnis, serta solusi digital berbasis AI. Kami memadukan keahlian profesional dengan solusi praktis dan terpersonalisasi yang dirancang khusus untuk menjawab kebutuhan serta tantangan unik setiap klien.',
     purposeBodySecondary:
       'Di 3.SEC, kami percaya bahwa layanan profesional yang efektif lebih dari sekadar menyelesaikan masalah jangka pendek. Kami berkomitmen menciptakan proses yang lebih baik, informasi yang lebih transparan, pengambilan keputusan yang lebih cerdas, dan operasional yang lebih efisien—membantu klien kami membangun bisnis yang lebih tangguh dan mencapai pertumbuhan yang berkelanjutan.',
     approachHeading: 'Cara kami membangun kerja sama.',
@@ -290,13 +290,13 @@ export const idDictionary: Dictionary = {
       },
       {
         id: 'payroll',
-        label: 'Payroll & HR Consultant',
-        desc: 'Perhitungan gaji, slip gaji, dan administrasi payroll & HR karyawan.',
+        label: 'Payroll & HR Management',
+        desc: 'Perhitungan gaji, slip gaji, konfigurasi HRIS, dan administrasi payroll & HR karyawan.',
       },
       {
         id: 'it',
         label: 'Digital Solution',
-        desc: 'Rencana website modern, aplikasi bisnis, dan transformasi digital.',
+        desc: 'Rencana website modern, otomatisasi proses bisnis, dan solusi digital.',
       },
     ],
     supportingHeading: 'Informasi yang dapat Anda siapkan.',
@@ -321,7 +321,7 @@ export const idDictionary: Dictionary = {
     'tax-accounting':
       'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang layanan Tax & Accounting untuk bisnis saya.',
     payroll:
-      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang layanan Payroll & HR Consultant untuk bisnis saya.',
+      'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang layanan Payroll & HR Management untuk bisnis saya.',
     it:
       'Halo 3.SEC Business, Tax & Digital Solution, saya ingin berdiskusi tentang kebutuhan Digital Solution untuk bisnis saya.',
   },

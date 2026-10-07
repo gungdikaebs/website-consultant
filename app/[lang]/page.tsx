@@ -410,6 +410,74 @@ export default async function HomePage({
         subheading={dict.home.faqIntro}
         items={dict.home.faqs}
       />
+
+      {/* 8. Office Location & Map Section */}
+      <section id="location" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="space-y-8 sm:space-y-10">
+          {/* Header */}
+          <div data-gsap="fade-up" className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
+              {dict.home.locationEyebrow || (isId ? 'LOKASI KAMI' : 'OUR LOCATION')}
+            </span>
+            <h2 className="font-[family-name:var(--font-lora)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B192C] tracking-tight">
+              {dict.home.locationHeading || (isId ? 'Kantor & Area Layanan' : 'Office & Advisory Base')}
+            </h2>
+            <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-xl mx-auto">
+              {dict.home.locationSubheading ||
+                (isId
+                  ? 'Berbasis di Bali, Indonesia — siap mendampingi kebutuhan konsultasi langsung maupun koordinasi jarak jauh untuk bisnis Anda.'
+                  : 'Based in Bali, Indonesia — available for in-person meetings and remote advisory sessions for your business.')}
+            </p>
+          </div>
+
+          {/* Map Container / Iframe Slot */}
+          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 relative">
+            {/* 
+              ============================================================
+              SLOT IFRAME GOOGLE MAPS
+              ============================================================
+            */}
+            <iframe
+              title="Lokasi Kantor 3.SEC - Pemogan, Denpasar Selatan, Bali"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.8053938919397!2d115.19098815479545!3d-8.697707124426275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2412bc5bbb48d%3A0x5a3d4fff0021ac9e!2sGg.%20Ratna%20Sari%20II%20No.16%2C%20Pemogan%2C%20Denpasar%20Selatan%2C%20Kota%20Denpasar%2C%20Bali%2080221!5e0!3m2!1sid!2sid!4v1791371404431!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="w-full h-[360px] sm:h-[450px] lg:h-[500px] border-0 block"
+            />
+          </div>
+
+          {/* Location Meta Details */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1.5">
+              <span className="font-mono text-xs font-bold text-[#0284C7] uppercase block">
+                {isId ? 'Alamat Kantor' : 'Office Address'}
+              </span>
+              <p className="text-sm font-semibold text-[#0B192C]">
+                Gg. Ratna Sari II No.16, Pemogan
+              </p>
+              <p className="text-xs text-stone-500">
+                Denpasar Selatan, Bali 80221
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1.5">
+              <span className="font-mono text-xs font-bold text-[#0284C7] uppercase block">
+                {isId ? 'Jadwal Pertemuan' : 'Consultation Hours'}
+              </span>
+              <p className="text-sm font-semibold text-[#0B192C]">
+                {isId ? 'Senin – Jumat (By Appointment)' : 'Mon – Fri (By Appointment)'}
+              </p>
+              <p className="text-xs text-stone-500">
+                {isId ? 'Konfirmasi jadwal via WhatsApp' : 'Scheduled via WhatsApp'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

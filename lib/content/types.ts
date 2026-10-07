@@ -134,6 +134,9 @@ export interface Dictionary {
     faqHeading: string;
     faqIntro: string;
     faqs: FAQItem[];
+    locationEyebrow?: string;
+    locationHeading?: string;
+    locationSubheading?: string;
     closingHeading: string;
     closingBody: string;
   };

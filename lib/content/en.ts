@@ -227,6 +227,10 @@ export const enDictionary: Dictionary = {
           'Yes. We operate fully remote and digital communication workflows for international and domestic clients, alongside scheduled in-person sessions.',
       },
     ],
+    locationEyebrow: 'OUR LOCATION',
+    locationHeading: 'Office & Advisory Base',
+    locationSubheading:
+      'Based in Bali, Indonesia — available for in-person meetings and remote advisory sessions for your business.',
     closingHeading: 'What would you like to improve in your business?',
     closingBody:
       'Tell us about your tax & accounting, IT, or payroll needs. Let’s identify the support that is most relevant to you.',

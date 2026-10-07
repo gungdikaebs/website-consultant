@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Halaman About (`app/[lang]/about/page.tsx`) telah dibersihkan total dari gradient dekoratif dan ornamen berlebihan; closing CTA banner diubah menjadi kartu editorial putih solid yang bersih (`bg-white border border-stone-200/90 shadow-2xs`), tipografi judul dan pull quote dibuat natural tanpa span buatan, daftar prinsip kerja dikembalikan ke manifesto editorial otentik (`divide-y`), dan tombol kontak tetap menggunakan Crimson Red solid; lint dan build lolos 100%.
+- Working tree: Halaman Homepage (`app/[lang]/page.tsx`) telah ditambahkan seksi Location tepat di bawah FAQ (`#location`) dengan kontainer iframe Google Maps responsif mode roadmap standar (`!5e0`, non-satelit) beserta 3 kartu informasi operasional; halaman About (`app/[lang]/about/page.tsx`) telah bersih dari gradient; lint dan build lolos 100%.
 - Verifikasi terakhir: `npm run lint` PASS (0 errors), `npm run build` PASS (12/12 static SSG routes).
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

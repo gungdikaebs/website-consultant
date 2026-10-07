@@ -228,6 +228,10 @@ export const idDictionary: Dictionary = {
           'Ya. Kami mendukung koordinasi online secara terintegrasi untuk klien secara global, serta pertemuan tatap muka terjadwal bila diperlukan.',
       },
     ],
+    locationEyebrow: 'LOKASI KAMI',
+    locationHeading: 'Kantor & Area Layanan',
+    locationSubheading:
+      'Berbasis di Bali, Indonesia — siap mendampingi kebutuhan konsultasi langsung maupun koordinasi jarak jauh untuk bisnis Anda.',
     closingHeading: 'Apa yang ingin Anda benahi dalam bisnis Anda?',
     closingBody:
       'Ceritakan kebutuhan Tax & Accounting, IT, atau Payroll Anda. Mari mulai dengan menentukan dukungan yang paling relevan.',

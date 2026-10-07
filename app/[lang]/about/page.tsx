@@ -33,56 +33,59 @@ export default async function AboutPage({
   const dict = getDictionary(validLang);
 
   return (
-    <div className="py-12 sm:py-20 lg:py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
-      {/* 1. Monograph Header: Calm, Authoritative Editorial Opening */}
+    <div className="py-12 sm:py-16 lg:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
+      {/* 1. Header: Authoritative Editorial Opening */}
       <section className="space-y-8">
         <div className="flex items-center gap-3 border-b border-stone-200/90 pb-4">
-          <span className="font-mono text-xs font-medium tracking-widest text-[#0F766E] uppercase">
+          <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
             {validLang === 'id' ? 'Tentang 3.SEC' : 'About 3.SEC'}
           </span>
           <span className="text-stone-300 font-mono text-xs">/</span>
           <span className="font-mono text-xs tracking-wider text-stone-500 uppercase">
-            {validLang === 'id' ? 'Eseni & Prinsip Pendampingan' : 'Essence & Advisory Ethos'}
+            {validLang === 'id' ? 'Esensi & Prinsip Pendampingan' : 'Essence & Advisory Ethos'}
           </span>
         </div>
 
         <div className="space-y-6">
-          <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0B192C] tracking-tight leading-[1.14]">
+          <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
             {dict.about.h1}
           </h1>
 
-          <p className="text-xl sm:text-2xl text-stone-600 font-normal leading-relaxed max-w-3xl font-[family-name:var(--font-lora)] italic">
-            &ldquo;{dict.about.profile}&rdquo;
-          </p>
+          {/* Editorial Pull Quote */}
+          <div className="border-l-2 border-amber-400 pl-6 sm:pl-8 py-1">
+            <p className="text-lg sm:text-xl text-stone-700 font-normal leading-relaxed font-[family-name:var(--font-lora)] italic">
+              &ldquo;{dict.about.profile}&rdquo;
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 2. Full-Width Architectural Visual: Pure Photography without Floating Gimmicks */}
-      <section className="space-y-4">
-        <div className="relative aspect-[16/9] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/80 bg-stone-100">
+      {/* 2. Architectural Photography Visual */}
+      <section className="space-y-3">
+        <div className="relative aspect-[16/9] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-sm bg-stone-100 group">
           <Image
             src="/images/about-workspace.jpg"
             alt="Suasana ruang kerja dan konsultasi 3.SEC Business, Tax & Digital Solution"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            className="object-cover"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="object-cover group-hover:scale-102 transition-transform duration-700"
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-stone-600 font-mono pt-1">
+        <div className="flex items-center justify-between text-xs text-stone-500 font-mono pt-1">
           <span>
             {validLang === 'id'
               ? 'Gbr 1.0 — Ruang Pertemuan Konsultasi Strategis'
               : 'Fig 1.0 — Strategic Consultation & Advisory Setting'}
           </span>
-          <span className="hidden sm:inline">3.SEC Business, Tax &amp; Digital Solution</span>
+          <span className="hidden sm:inline text-stone-400">3.SEC Business, Tax &amp; Digital Solution</span>
         </div>
       </section>
 
-      {/* 3. The Advisory Thesis: Sinergi Tiga Pilar */}
+      {/* 3. The Advisory Thesis: Purpose & Philosophy */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 pt-6 border-t border-stone-200">
         <div className="md:col-span-4 space-y-3">
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0284C7]">
             {validLang === 'id' ? 'Tujuan & Filosofi' : 'Purpose & Philosophy'}
           </span>
           <h2 className="font-[family-name:var(--font-lora)] text-2xl sm:text-3xl font-bold text-[#0B192C] leading-snug">
@@ -95,17 +98,17 @@ export default async function AboutPage({
             {dict.about.purposeBody}
           </p>
           {dict.about.purposeBodySecondary && (
-            <p className="text-stone-700 leading-relaxed text-base sm:text-lg font-normal">
+            <p className="pt-2">
               {dict.about.purposeBodySecondary}
             </p>
           )}
         </div>
       </section>
 
-      {/* 4. Working Principles: Clean Editorial Manifesto List (No AI badges or generic cards) */}
-      <section className="space-y-10 pt-6 border-t border-stone-200">
+      {/* 4. Working Principles: Clean Editorial Manifesto List */}
+      <section className="space-y-8 pt-6 border-t border-stone-200">
         <div className="space-y-2 max-w-xl">
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0284C7]">
             {validLang === 'id' ? 'Prinsip Kerja' : 'Working Principles'}
           </span>
           <h2 className="font-[family-name:var(--font-lora)] text-2xl sm:text-3xl font-bold text-[#0B192C]">
@@ -119,11 +122,11 @@ export default async function AboutPage({
               key={idx}
               className="py-8 sm:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group"
             >
-              <div className="md:col-span-2 font-mono text-xs text-stone-600 font-semibold tracking-wider">
+              <div className="md:col-span-2 font-mono text-xs text-stone-400 font-semibold tracking-wider">
                 [{String(idx + 1).padStart(2, '0')}]
               </div>
               <div className="md:col-span-4">
-                <h3 className="font-[family-name:var(--font-lora)] text-xl sm:text-2xl font-bold text-[#0B192C] group-hover:text-[#0F766E] transition-colors">
+                <h3 className="font-[family-name:var(--font-lora)] text-xl sm:text-2xl font-bold text-[#0B192C]">
                   {point.title}
                 </h3>
               </div>
@@ -140,7 +143,7 @@ export default async function AboutPage({
       {/* 5. Team Statement: Grounded & Authentic Experience */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 pt-6 border-t border-stone-200">
         <div className="md:col-span-4 space-y-3">
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0284C7]">
             {validLang === 'id' ? 'Kredibilitas Praktik' : 'Professional Grounding'}
           </span>
           <h2 className="font-[family-name:var(--font-lora)] text-2xl sm:text-3xl font-bold text-[#0B192C] leading-snug">
@@ -153,23 +156,26 @@ export default async function AboutPage({
             {dict.about.teamBody}
           </p>
 
-          <div className="bg-stone-50 border border-stone-200/80 rounded-2xl p-6 sm:p-7 space-y-3">
-            <h4 className="font-semibold text-sm text-[#0B192C]">
+          <div className="bg-[#FBFBF9] border border-stone-200/90 rounded-2xl p-6 sm:p-7 space-y-2.5">
+            <h4 className="font-bold text-sm text-[#0B192C]">
               {validLang === 'id' ? 'Komitmen Etika & Ketepatan Kerja' : 'Ethical Standard & Delivery Quality'}
             </h4>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
               {validLang === 'id'
-                ? 'Kami tidak menggunakan klaim artifisial. Setiap rekomendasi pajak, spesifikasi teknis IT, dan kalkulasi penggajian disusun secara langsung oleh praktisi berpengalaman yang memahami regulasi dan dinamika operasional lapangan.'
-                : 'We operate with candid rigor. Every tax advisory memorandum, technical system architecture, and payroll computation is prepared directly by experienced professionals who understand real-world regulatory and operational requirements.'}
+                ? 'Kami tidak menggunakan klaim artifisial. Setiap rekomendasi pajak, rancangan sistem digital, dan kalkulasi penggajian disusun secara langsung oleh praktisi berpengalaman yang memahami regulasi dan dinamika operasional lapangan.'
+                : 'We operate with candid rigor. Every tax advisory memorandum, digital system architecture, and payroll computation is prepared directly by experienced professionals who understand real-world regulatory and operational requirements.'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* 6. Dignified, Quiet Closing (No screaming sales banner) */}
-      <section className="pt-12 sm:pt-16 border-t border-stone-200">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 py-8 sm:py-12 px-6 sm:px-10 rounded-2xl bg-stone-100/70 border border-stone-200/90">
+      {/* 6. Closing CTA: Solid Editorial Card (No decorative gradients or AI glow effects) */}
+      <section className="pt-8 sm:pt-12 border-t border-stone-200">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 py-8 sm:py-12 px-6 sm:px-10 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs">
           <div className="space-y-2 max-w-lg">
+            <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
+              {validLang === 'id' ? 'Langkah Awal' : 'Next Step'}
+            </span>
             <h3 className="font-[family-name:var(--font-lora)] text-2xl sm:text-3xl font-bold text-[#0B192C] tracking-tight">
               {dict.about.closingCta}
             </h3>
@@ -181,9 +187,10 @@ export default async function AboutPage({
           </div>
           <Link
             href={`/${validLang}/contact`}
-            className="inline-flex items-center justify-center min-h-[48px] px-7 py-3 rounded-full bg-[#0B192C] hover:bg-[#1E2E45] text-white font-semibold text-sm transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3 rounded-full bg-[#B91C1C] hover:bg-[#991B1B] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all active:scale-95 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C]"
           >
-            {dict.common.cta.primary}
+            <span>{dict.common.cta.primary}</span>
+            <span className="text-base font-sans">&rarr;</span>
           </Link>
         </div>
       </section>

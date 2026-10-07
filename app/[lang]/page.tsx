@@ -387,13 +387,13 @@ export default async function HomePage({
       </section>
 
       {/* 5. Clients / Sector Credibility Marquee */}
-      <ClientsGrid
+      {/* <ClientsGrid
         lang={validLang}
         eyebrow={dict.home.clientsEyebrow}
         heading={dict.home.clientsHeading}
         subheading={dict.home.clientsSubheading}
         clients={dict.home.clientsList}
-      />
+      /> */}
 
       {/* 6. Testimonials Carousel: Authentic Client Voice */}
       <TestimonialsSection

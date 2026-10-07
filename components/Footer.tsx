@@ -169,7 +169,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/3secsolution/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram 3.SEC Business, Tax & Digital Solution"

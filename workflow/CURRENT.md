@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Komponen `components/TeamSection.tsx` disesuaikan untuk layout 5 kolom pada layar desktop (`lg:grid-cols-5`). Teks nama, peran, dan tombol LinkedIn pada layar desktop (`lg:`) dipindahkan ke bawah foto (`hidden lg:flex pt-3 items-start justify-between`) agar tidak sempit dan foto tampak bersih penuh, sementara pada layar mobile/tablet (`< lg`) kartu badge overlay tetap dipertahankan (`lg:hidden`). Seluruh breadcrumb halaman konsisten melalui `PageBreadcrumb`.
-- Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), `npm run build` PASS (12/12 static SSG routes). Dev server aktif di port 3000.
+- Working tree: Komponen `components/TeamSection.tsx` diperbaiki secara visual: tombol LinkedIn dipindahkan ke sudut kanan atas foto dengan badge kaca bulat modern sehingga area teks di bawah foto mendapatkan 100% lebar kolom penuh (tidak lagi terpotong/sempit); tinggi nama diseragamkan (`min-h-[38px] sm:min-h-[46px]`) agar teks jabatan (Role) sejajar lurus secara horizontal di seluruh 5 kartu; tipografi nama dan jabatan dihaluskan dengan line-height yang seimbang.
+- Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), Next.js dev server aktif di port 3000.
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

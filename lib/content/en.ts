@@ -287,33 +287,33 @@ export const enDictionary: Dictionary = {
     teamSectionSubheading:
       'Meet the talented individuals who drive our clients’ success with their dedication, expertise, and practical solutions.',
     teamMembers: [
-      {
-        name: 'Gung De',
-        role: '-',
+     {
+        name: 'I Gusti Agung Gede Wahyu Widhi Atmika, S.E',
+        role: 'Tax & Accounting Consultant',
         image: '/images/team/team-1.png',
         linkedin: 'https://linkedin.com',
       },
       {
-        name: 'Gung Dika',
+        name: 'A.A. Dika Surya Putra',
         role: 'Digital Solution',
         image: '/images/team/team-2.png',
         linkedin: 'https://linkedin.com',
       },
       {
-        name: '-',
-        role: '-',
+        name: 'I Gede Wibawa Reska Putra, S.E., M.M., BKP',
+        role: 'Tax & Accounting Consultant',
         image: '/images/team/team-3.png',
         linkedin: 'https://linkedin.com',
       },
       {
-        name: 'Gung Kris',
-        role: '-',
+        name: 'A.A. Krisna Guna Putra, S.Kom',
+        role: 'Digital Solution',
         image: '/images/team/team-4.png',
         linkedin: 'https://linkedin.com',
       },
       {
-        name: '-',
-        role: '-',
+        name: 'I Ketut Jodi Mahendra, S.H',
+        role: 'Payroll & HR Management Consultant',
         image: '/images/team/team-5.png',
         linkedin: 'https://linkedin.com',
       },

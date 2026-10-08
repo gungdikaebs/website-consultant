@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Komponen baru `PageBreadcrumb` (`components/PageBreadcrumb.tsx`) dibuat untuk menstandarkan seluruh breadcrumb halaman (`about`, `service`, `contact`). Garis pembatas horizontal tipis `border-b border-stone-200/90 pb-4`, font monospace uppercase berjarak warna biru `#0284C7` (primary) dan abu-abu stone-500 (secondary) kini 100% konsisten di semua halaman ID dan EN. Seksi "Our Team" (`components/TeamSection.tsx`) tetap rapi dalam format grid 3 kolom menyamping mengalir ke bawah.
+- Working tree: Komponen `components/TeamSection.tsx` disesuaikan untuk layout 5 kolom pada layar desktop (`lg:grid-cols-5`). Teks nama, peran, dan tombol LinkedIn pada layar desktop (`lg:`) dipindahkan ke bawah foto (`hidden lg:flex pt-3 items-start justify-between`) agar tidak sempit dan foto tampak bersih penuh, sementara pada layar mobile/tablet (`< lg`) kartu badge overlay tetap dipertahankan (`lg:hidden`). Seluruh breadcrumb halaman konsisten melalui `PageBreadcrumb`.
 - Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), `npm run build` PASS (12/12 static SSG routes). Dev server aktif di port 3000.
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

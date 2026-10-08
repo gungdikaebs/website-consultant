@@ -237,6 +237,8 @@ export const idDictionary: Dictionary = {
       'Ceritakan kebutuhan Tax & Accounting, IT, atau Payroll Anda. Mari mulai dengan menentukan dukungan yang paling relevan.',
   },
   service: {
+    breadcrumbPrimary: 'Layanan 3.SEC',
+    breadcrumbSecondary: 'Direktori & Ruang Lingkup',
     h1: 'Tiga bidang layanan. Satu partner bisnis.',
     intro:
       'Dari pencatatan keuangan hingga otomatisasi proses dan pengelolaan payroll, pilih dukungan yang sesuai dengan prioritas bisnis Anda.',
@@ -253,6 +255,8 @@ export const idDictionary: Dictionary = {
       'Cakupan, jadwal, dan biaya layanan ditentukan berdasarkan kebutuhan bisnis Anda.',
   },
   about: {
+    breadcrumbPrimary: 'Tentang 3.SEC',
+    breadcrumbSecondary: 'Esensi & Prinsip Pendampingan',
     h1: 'Pendampingan bisnis dimulai dengan memahami kebutuhan Anda.',
     profile:
       '3.SEC Business, Tax & Digital Solutions adalah firma konsultasi dan solusi bisnis profesional yang menghadirkan layanan terpadu mencakup pendampingan bisnis, akuntansi, perpajakan, pengelolaan SDM, payroll, dan solusi digital. Kami membantu individu maupun entitas bisnis mengelola operasional harian, memperkuat tata kelola proses keuangan dan administrasi, memastikan kepatuhan regulasi, serta memanfaatkan teknologi agar dapat beroperasi lebih efisien dan bertumbuh secara berkelanjutan.',
@@ -279,9 +283,47 @@ export const idDictionary: Dictionary = {
     teamHeading: 'Berangkat dari pengalaman anggota tim.',
     teamBody:
       'Beberapa anggota tim 3.SEC Consulting memiliki pengalaman menangani klien sebelum bergabung dalam 3.SEC Consulting. Pengalaman tersebut menjadi bekal untuk memahami kebutuhan klien dan membangun pendekatan layanan kami.',
+    teamEyebrow: 'Tim Kami',
+    teamSectionHeading: 'Kenali Tim 3.SEC',
+    teamSectionSubheading:
+      'Para profesional berdedikasi yang mendukung kesuksesan bisnis Anda dengan keahlian praktis, ketelitian, dan integritas kerja.',
+    teamMembers: [
+      {
+        name: 'Gung De',
+        role: '- ',
+        image: '/images/team/team-1.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: 'Gung Dika',
+        role: 'Digital Solution',
+        image: '/images/team/team-2.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: '-',
+        role: '- ',
+        image: '/images/team/team-3.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: 'Gung Kris',
+        role: '- ',
+        image: '/images/team/team-4.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: '-',
+        role: '- ',
+        image: '/images/team/team-5.png',
+        linkedin: 'https://linkedin.com',
+      },
+    ],
     closingCta: 'Kenali dukungan yang sesuai untuk bisnis Anda.',
   },
   contact: {
+    breadcrumbPrimary: 'Kontak 3.SEC',
+    breadcrumbSecondary: 'Konsultasi & Diskusi Awal',
     h1: 'Mari mulai dari kebutuhan bisnis Anda.',
     intro:
       'Ceritakan layanan yang Anda perlukan, kondisi bisnis saat ini, dan tujuan yang ingin dicapai. Informasi awal ini membantu kami mempersiapkan percakapan yang relevan.',

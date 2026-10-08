@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
+import TeamSection from '@/components/TeamSection';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 export async function generateMetadata({
   params,
@@ -36,15 +38,10 @@ export default async function AboutPage({
     <div className="py-12 sm:py-16 lg:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
       {/* 1. Header: Authoritative Editorial Opening */}
       <section className="space-y-8">
-        <div className="flex items-center gap-3 border-b border-stone-200/90 pb-4">
-          <span className="font-mono text-xs font-bold tracking-widest text-[#0284C7] uppercase">
-            {validLang === 'id' ? 'Tentang 3.SEC' : 'About 3.SEC'}
-          </span>
-          <span className="text-stone-300 font-mono text-xs">/</span>
-          <span className="font-mono text-xs tracking-wider text-stone-500 uppercase">
-            {validLang === 'id' ? 'Esensi & Prinsip Pendampingan' : 'Essence & Advisory Ethos'}
-          </span>
-        </div>
+        <PageBreadcrumb
+          primary={dict.about.breadcrumbPrimary || (validLang === 'id' ? 'Tentang 3.SEC' : 'About 3.SEC')}
+          secondary={dict.about.breadcrumbSecondary || (validLang === 'id' ? 'Esensi & Prinsip Pendampingan' : 'Essence & Advisory Ethos')}
+        />
 
         <div className="space-y-6">
           <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
@@ -169,7 +166,18 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* 6. Closing CTA: Solid Editorial Card (No decorative gradients or AI glow effects) */}
+      {/* 6. Meet the Team Carousel */}
+      {dict.about.teamMembers && dict.about.teamMembers.length > 0 && (
+        <TeamSection
+          lang={validLang}
+          eyebrow={dict.about.teamEyebrow}
+          heading={dict.about.teamSectionHeading}
+          subheading={dict.about.teamSectionSubheading}
+          members={dict.about.teamMembers}
+        />
+      )}
+
+      {/* 7. Closing CTA: Solid Editorial Card (No decorative gradients or AI glow effects) */}
       <section className="pt-8 sm:pt-12 border-t border-stone-200">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 py-8 sm:py-12 px-6 sm:px-10 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs">
           <div className="space-y-2 max-w-lg">

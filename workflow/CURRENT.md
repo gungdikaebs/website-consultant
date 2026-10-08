@@ -8,7 +8,7 @@
 - Owner saat ini: Codex untuk review integrasi dan UX review.
 - Diperbarui: 2026-10-05 (Asia/Makassar).
 - Branch/commit terakhir diperiksa: main, b4f76e7.
-- Working tree: Halaman Homepage (`app/[lang]/page.tsx`) telah ditambahkan seksi Location tepat di bawah FAQ (`#location`) dengan kontainer iframe Google Maps responsif mode roadmap standar (`!5e0`, non-satelit) beserta 3 kartu informasi operasional; halaman About (`app/[lang]/about/page.tsx`) telah bersih dari gradient; lint dan build lolos 100%.
-- Verifikasi terakhir: `npm run lint` PASS (0 errors), `npm run build` PASS (12/12 static SSG routes).
+- Working tree: Komponen baru `PageBreadcrumb` (`components/PageBreadcrumb.tsx`) dibuat untuk menstandarkan seluruh breadcrumb halaman (`about`, `service`, `contact`). Garis pembatas horizontal tipis `border-b border-stone-200/90 pb-4`, font monospace uppercase berjarak warna biru `#0284C7` (primary) dan abu-abu stone-500 (secondary) kini 100% konsisten di semua halaman ID dan EN. Seksi "Our Team" (`components/TeamSection.tsx`) tetap rapi dalam format grid 3 kolom menyamping mengalir ke bawah.
+- Verifikasi terakhir: `npm run lint` PASS (0 errors, 0 warnings), `npm run build` PASS (12/12 static SSG routes). Dev server aktif di port 3000.
 - Langkah berikutnya: Codex melakukan final review integrasi dan UX.
 - Keputusan/akses tertunda: tinjauan pengguna terhadap daftar nama/logo klien riil dan kutipan testimoni resmi bila ingin mengganti data draft terpasang; lihat task aktif.

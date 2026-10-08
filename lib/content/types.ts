@@ -67,6 +67,13 @@ export interface MetricItem {
   label: string;
 }
 
+export interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  linkedin?: string;
+}
+
 export interface Dictionary {
   meta: {
     homeTitle: string;
@@ -141,6 +148,8 @@ export interface Dictionary {
     closingBody: string;
   };
   service: {
+    breadcrumbPrimary?: string;
+    breadcrumbSecondary?: string;
     h1: string;
     intro: string;
     navLabel: string;
@@ -151,6 +160,8 @@ export interface Dictionary {
     visitorNote: string;
   };
   about: {
+    breadcrumbPrimary?: string;
+    breadcrumbSecondary?: string;
     h1: string;
     profile: string;
     purposeHeading: string;
@@ -160,9 +171,15 @@ export interface Dictionary {
     approachPoints: ApproachPoint[];
     teamHeading: string;
     teamBody: string;
+    teamEyebrow?: string;
+    teamSectionHeading?: string;
+    teamSectionSubheading?: string;
+    teamMembers?: TeamMember[];
     closingCta: string;
   };
   contact: {
+    breadcrumbPrimary?: string;
+    breadcrumbSecondary?: string;
     h1: string;
     intro: string;
     selectorLabel: string;

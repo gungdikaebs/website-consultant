@@ -236,6 +236,8 @@ export const enDictionary: Dictionary = {
       'Tell us about your tax & accounting, IT, or payroll needs. Let’s identify the support that is most relevant to you.',
   },
   service: {
+    breadcrumbPrimary: 'Services 3.SEC',
+    breadcrumbSecondary: 'Service Directory & Scope',
     h1: 'Three service areas. One business partner.',
     intro:
       'From financial records to process automation and payroll management, choose support that fits your business priorities.',
@@ -252,6 +254,8 @@ export const enDictionary: Dictionary = {
       'Service scope, timeline, and fees depend on your business requirements.',
   },
   about: {
+    breadcrumbPrimary: 'About 3.SEC',
+    breadcrumbSecondary: 'Essence & Advisory Ethos',
     h1: 'Business support starts with understanding your needs.',
     profile:
       '3.SEC Business, Tax & Digital Solutions is a professional consulting and business solutions firm providing integrated services across business support, accounting, tax, human resources, payroll, and digital solutions. We help individuals and businesses manage their day-to-day operations, strengthen financial and administrative processes, stay compliant, and leverage technology to work more efficiently and grow sustainably.',
@@ -278,9 +282,47 @@ export const enDictionary: Dictionary = {
     teamHeading: 'Built on our team members’ experience.',
     teamBody:
       'Some 3.SEC team members have worked with clients before joining 3.SEC. Their experience helps inform how we understand client needs and develop our service approach.',
+    teamEyebrow: 'Our Team',
+    teamSectionHeading: 'Meet the 3.SEC team',
+    teamSectionSubheading:
+      'Meet the talented individuals who drive our clients’ success with their dedication, expertise, and practical solutions.',
+    teamMembers: [
+      {
+        name: 'Gung De',
+        role: '-',
+        image: '/images/team/team-1.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: 'Gung Dika',
+        role: 'Digital Solution',
+        image: '/images/team/team-2.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: '-',
+        role: '-',
+        image: '/images/team/team-3.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: 'Gung Kris',
+        role: '-',
+        image: '/images/team/team-4.png',
+        linkedin: 'https://linkedin.com',
+      },
+      {
+        name: '-',
+        role: '-',
+        image: '/images/team/team-5.png',
+        linkedin: 'https://linkedin.com',
+      },
+    ],
     closingCta: 'Find the support that fits your business.',
   },
   contact: {
+    breadcrumbPrimary: 'Contact 3.SEC',
+    breadcrumbSecondary: 'Consultation & Inquiry',
     h1: 'Let’s start with your business needs.',
     intro:
       'Tell us which service you need, your current business situation, and your goals. This information helps us prepare for a relevant conversation.',

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 export async function generateMetadata({
   params,
@@ -36,13 +37,15 @@ export default async function ServicePage({
   return (
     <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 py-12 sm:py-16 lg:py-20">
       {/* 1. Page Header & Quick Navigation with Image */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-8 sm:space-y-10">
+        <PageBreadcrumb
+          primary={dict.service.breadcrumbPrimary || (validLang === 'id' ? 'Layanan 3.SEC' : 'Services 3.SEC')}
+          secondary={dict.service.breadcrumbSecondary || (validLang === 'id' ? 'Direktori & Ruang Lingkup' : 'Service Directory & Scope')}
+        />
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Heading, Intro & Anchor Navigation */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F766E]">
-              {validLang === 'id' ? 'Layanan 3.SEC / Direktori Layanan' : 'Layanan 3.SEC / Our Services'}
-            </span>
             <h1 className="font-[family-name:var(--font-lora)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B192C] tracking-tight leading-[1.14]">
               {dict.service.h1}
             </h1>

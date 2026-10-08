@@ -5,8 +5,6 @@ import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
 import FAQAccordion from '@/components/FAQAccordion';
-import ClientsGrid from '@/components/ClientsGrid';
-import TestimonialsSection from '@/components/TestimonialsSection';
 
 export async function generateMetadata({
   params,
@@ -396,12 +394,12 @@ export default async function HomePage({
       /> */}
 
       {/* 6. Testimonials Carousel: Authentic Client Voice */}
-      <TestimonialsSection
+      {/* <TestimonialsSection
         eyebrow={dict.home.testimonialsEyebrow}
         heading={dict.home.testimonialsHeading}
         subheading={dict.home.testimonialsSubheading}
         testimonials={dict.home.testimonialsList}
-      />
+      /> */}
 
       {/* 7. Comprehensive FAQ Section */}
       <FAQAccordion

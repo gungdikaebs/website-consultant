@@ -313,7 +313,7 @@ export const idDictionary: Dictionary = {
         linkedin: 'https://www.linkedin.com/in/krisna-gunaputra/',
       },
       {
-        name: 'I Ketut Jodi Mahendra, S.H',
+        name: 'Ketut Jodi Mahendra, S.H',
         role: 'Payroll & HR Management Consultant',
         image: '/images/team/team-5.png',
         linkedin: 'https://www.linkedin.com/in/ketut-jodi-mahendra-04723824a/',

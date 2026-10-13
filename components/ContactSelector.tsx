@@ -122,7 +122,7 @@ export default function ContactSelector({ lang, dictionary }: ContactSelectorPro
           </h2>
 
           {waLink.isExternal ? (
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a
                 href={waLink.href}
                 target="_blank"
@@ -134,10 +134,27 @@ export default function ContactSelector({ lang, dictionary }: ContactSelectorPro
                 </svg>
                 <span>{dictionary.contact.whatsappCta}</span>
               </a>
-              <p className="text-xs text-stone-500 text-center">
+
+              {contactConfig.email && (
+                <a
+                  href={`mailto:${contactConfig.email}?subject=${encodeURIComponent(
+                    lang === 'id'
+                      ? `Konsultasi: ${dictionary.contact.options.find((o) => o.id === selectedService)?.label || '3.SEC Solution'}`
+                      : `Inquiry: ${dictionary.contact.options.find((o) => o.id === selectedService)?.label || '3.SEC Solution'}`
+                  )}`}
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-white hover:bg-stone-50 text-[#0B192C] font-semibold text-sm border border-stone-300 shadow-2xs hover:border-stone-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B192C]"
+                >
+                  <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>{lang === 'id' ? 'Kirim Pesan via Email' : 'Send Inquiry via Email'}</span>
+                </a>
+              )}
+
+              <p className="text-xs text-stone-500 text-center pt-1">
                 {lang === 'id'
-                  ? 'Percakapan akan dibuka langsung pada aplikasi WhatsApp Anda.'
-                  : 'The chat will open directly in your WhatsApp application.'}
+                  ? 'Percakapan akan dibuka langsung pada aplikasi WhatsApp atau aplikasi email Anda.'
+                  : 'Inquiries will open directly in your WhatsApp or email application.'}
               </p>
             </div>
           ) : (
@@ -154,33 +171,72 @@ export default function ContactSelector({ lang, dictionary }: ContactSelectorPro
             </div>
           )}
 
-          {/* Optional Info: Email, Address, Business Hours */}
-          {(contactConfig.email || contactConfig.address || contactConfig.businessHours) && (
-            <div className="pt-4 border-t border-stone-100 space-y-3 text-xs text-stone-600">
+          {/* Optional Info: Email, Phone, Address, Business Hours */}
+          {(contactConfig.email || contactConfig.whatsappNumber || contactConfig.address || contactConfig.businessHours) && (
+            <div className="pt-4 border-t border-stone-200/80 space-y-3.5 text-xs text-stone-600">
               {contactConfig.email && (
-                <div>
-                  <span className="font-semibold text-stone-800 block">
-                    {dictionary.contact.optionalLabels.email}:
-                  </span>
-                  <a href={`mailto:${contactConfig.email}`} className="text-[#0F766E] hover:underline">
-                    {contactConfig.email}
-                  </a>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200/60 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-stone-800 block text-xs">
+                      {dictionary.contact.optionalLabels.email}
+                    </span>
+                    <a href={`mailto:${contactConfig.email}`} className="text-[#0F766E] hover:underline font-mono text-[13px] font-medium">
+                      {contactConfig.email}
+                    </a>
+                  </div>
+                </div>
+              )}
+              {contactConfig.whatsappNumber && (
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200/60 mt-0.5">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.115-.527-1.422-.591-2.339-2.039-2.41-2.133-.071-.094-.575-.765-.575-1.46 0-.694.364-1.035.495-1.177.13-.142.285-.178.38-.178.095 0 .19.001.272.006.088.004.204-.033.319.243.119.286.405.992.441 1.064.036.071.06.155.012.25-.048.095-.072.155-.143.238-.071.083-.15.185-.214.249-.071.071-.145.148-.063.29.083.142.368.608.79 0.984.543.483 1.002.632 1.144.703.143.071.226.06.31-.036.084-.095.357-.417.452-.56.095-.143.19-.119.321-.071.131.048.832.393.975.464.143.071.238.107.273.167.036.06.036.345-.108.75z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-stone-800 block text-xs">
+                      WhatsApp / Telepon
+                    </span>
+                    <a href={`https://wa.me/${contactConfig.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:underline font-mono text-[13px] font-medium">
+                      +62 851-2694-4143
+                    </a>
+                  </div>
                 </div>
               )}
               {contactConfig.address && (
-                <div>
-                  <span className="font-semibold text-stone-800 block">
-                    {dictionary.contact.optionalLabels.address}:
-                  </span>
-                  <span>{contactConfig.address}</span>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-200/60 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-stone-800 block text-xs">
+                      {dictionary.contact.optionalLabels.address}
+                    </span>
+                    <span className="text-stone-600 leading-relaxed">{contactConfig.address}</span>
+                  </div>
                 </div>
               )}
               {contactConfig.businessHours && (
-                <div>
-                  <span className="font-semibold text-stone-800 block">
-                    {dictionary.contact.optionalLabels.hours}:
-                  </span>
-                  <span>{contactConfig.businessHours}</span>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 border border-stone-200 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-stone-800 block text-xs">
+                      {dictionary.contact.optionalLabels.hours}
+                    </span>
+                    <span className="text-stone-600 font-mono text-[11px]">{contactConfig.businessHours}</span>
+                  </div>
                 </div>
               )}
             </div>

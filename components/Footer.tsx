@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import BrandLogo from './BrandLogo';
 import { Locale, Dictionary } from '@/lib/content/types';
+import { contactConfig } from '@/lib/content/config';
 
 interface FooterProps {
   lang: Locale;
@@ -45,7 +46,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Based in Bali, Indonesia</span>
+                <span>Jalan Gelogor Carik Gang Ratnasari II No 16, Pemogan, Denpasar Selatan, Bali</span>
               </div>
              
             </div>
@@ -150,6 +151,37 @@ export default function Footer({ lang, dictionary }: FooterProps) {
               <div className="text-stone-500">{isId ? 'Sabtu – Minggu / Libur: Janji Temu' : 'Sat – Sun / Holidays: By Appointment'}</div>
             </div>
 
+            {/* Direct Contact Info */}
+            <div className="space-y-1.5 text-xs text-stone-300 font-mono pt-1">
+              <div className="text-stone-400 font-semibold uppercase tracking-wider text-[11px]">
+                {isId ? 'Hubungi Kami' : 'Get In Touch'}:
+              </div>
+              <div>
+                <a
+                  href={`https://wa.me/${contactConfig.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-white group-hover:scale-125 transition-transform" />
+                    <span className="text-stone-400">Whatsapp:</span>
+                  <span className="text-stone-200 group-hover:text-emerald-400">+62 851-2694-4143</span>
+                </a>
+              </div>
+              {contactConfig.email && (
+                <div>
+                  <a
+                    href={`mailto:${contactConfig.email}`}
+                    className="hover:text-amber-300 transition-colors inline-flex items-center gap-2 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-white group-hover:scale-125 transition-transform" />
+                    <span className="text-stone-400">Email:</span>
+                    <span className="text-stone-200 group-hover:text-amber-300">{contactConfig.email}</span>
+                  </a>
+                </div>
+              )}
+            </div>
+
             {/* Social Circle Icons */}
             <div className="pt-1">
               <span className="text-xs text-stone-400 font-mono block mb-2">{isId ? 'Saluran Profesional' : 'Professional Channels'}:</span>
@@ -180,6 +212,19 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   </svg>
                 </a>
 
+                {/* Email Direct Link */}
+                {contactConfig.email && (
+                  <a
+                    href={`mailto:${contactConfig.email}`}
+                    aria-label={`Email ${contactConfig.email}`}
+                    className="w-9 h-9 rounded-full bg-stone-800 hover:bg-[#0F766E] hover:text-white text-stone-300 flex items-center justify-center transition-all border border-stone-700/60 shadow-2xs"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </a>
+                )}
+
                 {/* Contact Page Link */}
                 <Link
                   href={`/${lang}/contact`}
@@ -187,7 +232,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
                   className="w-9 h-9 rounded-full bg-stone-800 hover:bg-[#B91C1C] hover:text-white text-stone-300 flex items-center justify-center transition-all border border-stone-700/60 shadow-2xs"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </Link>
               </div>

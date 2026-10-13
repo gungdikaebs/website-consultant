@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
 import Image from 'next/image';
 import { Locale, Dictionary } from '@/lib/content/types';
+import { contactConfig } from '@/lib/content/config';
 
 interface FloatingWhatsAppProps {
   lang: Locale;
@@ -17,7 +18,7 @@ export default function FloatingWhatsApp({ lang, dictionary }: FloatingWhatsAppP
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isId = lang === 'id';
-  const whatsappNumber = '62123456789';
+  const whatsappNumber = contactConfig.whatsappNumber || '6285126944143';
 
   const defaultGreeting =
     dictionary?.whatsappMessages?.general ||
@@ -103,25 +104,23 @@ export default function FloatingWhatsApp({ lang, dictionary }: FloatingWhatsAppP
         <div className="bg-gradient-to-r from-[#0F766E] to-[#115E59] text-white p-4 sm:p-4.5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* 3.SEC Avatar / Badge */}
-            <div className="relative w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shrink-0">
-              <svg
-                className="w-6 h-6"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path d="M4 9L17 28L13 34L2 13L4 9Z" fill="#38BDF8" />
-                <path d="M17 28L11 9H17.5L21.5 21L17 28Z" fill="#F87171" />
-                <path d="M21.5 21L26.5 9H33L24 30.5L21.5 21Z" fill="#FBBF24" />
-              </svg>
+            <div className="relative w-11 h-11 shrink-0">
+              <div className="w-11 h-11 rounded-full overflow-hidden bg-[#0B192C] border border-white/20 flex items-center justify-center shadow-sm">
+                <Image
+                  src="/icon/logo.svg"
+                  alt="3.SEC Profile"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               {/* Online Green Indicator Dot */}
               <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0F766E]" />
             </div>
 
             <div className="flex flex-col">
               <span className="font-bold text-sm tracking-tight text-white leading-tight">
-                3.SEC Advisory
+                3.SEC Solution
               </span>
               <span className="text-[11px] text-emerald-100/90 font-medium flex items-center gap-1.5 mt-0.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />

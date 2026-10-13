@@ -9,10 +9,10 @@ import { ContactConfig } from './types';
  * - Field null/kosong otomatis disembunyikan atau memicu state "detail kontak sedang disiapkan".
  */
 export const contactConfig: ContactConfig = {
-  whatsappNumber: '62123456789', // Nomor resmi WhatsApp
-  email: null,
-  address: null,
-  businessHours: null,
+  whatsappNumber: '6285126944143', // Nomor resmi WhatsApp
+  email: 'info@3secsolution.com',
+  address: 'Jalan Gelogor Carik Gang Ratnasari II No 16, Pemogan, Denpasar Selatan, Bali',
+  businessHours: 'Senin – Jumat: 09:00 – 17:00 WITA',
 };
 
 /**

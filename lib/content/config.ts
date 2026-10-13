@@ -12,7 +12,7 @@ export const contactConfig: ContactConfig = {
   whatsappNumber: '6285126944143', // Nomor resmi WhatsApp
   email: 'info@3secsolution.com',
   address: 'Jalan Gelogor Carik Gang Ratnasari II No 16, Pemogan, Denpasar Selatan, Bali',
-  businessHours: 'Senin – Jumat: 09:00 – 17:00 WITA',
+  businessHours: 'Senin – Jumat: 9 AM – 9 PM WITA',
 };
 
 /**

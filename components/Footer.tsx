@@ -147,7 +147,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
             {/* Business Hours */}
             <div className="space-y-1 text-xs text-stone-400 font-mono">
               <div className="text-stone-300 font-semibold">{isId ? 'Jam Layanan' : 'Advisory Hours'}:</div>
-              <div>{isId ? 'Senin – Jumat' : 'Monday – Friday'}: 09:00 – 17:00 WITA</div>
+              <div>{isId ? 'Senin – Jumat' : 'Monday – Friday'}: 9 AM – 9 PM WITA</div>
               <div className="text-stone-500">{isId ? 'Sabtu – Minggu / Libur: Janji Temu' : 'Sat – Sun / Holidays: By Appointment'}</div>
             </div>
 

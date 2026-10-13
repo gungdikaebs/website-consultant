@@ -235,7 +235,9 @@ export default function ContactSelector({ lang, dictionary }: ContactSelectorPro
                     <span className="font-semibold text-stone-800 block text-xs">
                       {dictionary.contact.optionalLabels.hours}
                     </span>
-                    <span className="text-stone-600 font-mono text-[11px]">{contactConfig.businessHours}</span>
+                    <span className="text-stone-600 font-mono text-[11px]">
+                      {lang === 'id' ? 'Senin – Jumat: 9 AM – 9 PM WITA' : 'Monday – Friday: 9 AM – 9 PM WITA'}
+                    </span>
                   </div>
                 </div>
               )}

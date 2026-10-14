@@ -290,7 +290,7 @@ export const idDictionary: Dictionary = {
     teamMembers: [
       {
         name: 'I Gusti Agung Gede Wahyu Widhi Atmika, S.E',
-        role: 'Tax & Accounting Consultant',
+        role: 'General Director',
         image: '/images/team/team-1.png',
         linkedin: 'https://www.linkedin.com/in/i-gusti-agung-gede-wahyu-widhi-atmika-s-e-3a9318201/?isSelfProfile=true',
       },

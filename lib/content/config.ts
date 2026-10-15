@@ -1,18 +1,25 @@
 import { ContactConfig } from './types';
 
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://3secsolution.com';
+
 /**
  * Konfigurasi kontak perusahaan 3.SEC Business, Tax & Digital Solution.
- *
- * Catatan Handoff:
- * - Nilai awal seluruh kontak adalah kosong/null.
- * - Nomor WhatsApp jika diisi harus berupa digit internasional tanpa '+', spasi, atau tanda baca (cth: '6281234567890').
- * - Field null/kosong otomatis disembunyikan atau memicu state "detail kontak sedang disiapkan".
  */
 export const contactConfig: ContactConfig = {
   whatsappNumber: '6285126944143', // Nomor resmi WhatsApp
   email: 'info@3secsolution.com',
   address: 'Jalan Gelogor Carik Gang Ratnasari II No 16, Pemogan, Denpasar Selatan, Bali',
   businessHours: 'Senin – Jumat: 9 AM – 9 PM WITA',
+};
+
+export const businessLocation = {
+  streetAddress: 'Jalan Gelogor Carik Gang Ratnasari II No 16, Pemogan',
+  addressLocality: 'Denpasar Selatan',
+  addressRegion: 'Bali',
+  postalCode: '80221',
+  addressCountry: 'ID',
+  latitude: -8.7042,
+  longitude: 115.1986,
 };
 
 /**

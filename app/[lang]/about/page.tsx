@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/content/config';
 import TeamSection from '@/components/TeamSection';
 import PageBreadcrumb from '@/components/PageBreadcrumb';
+import JsonLd from '@/components/JsonLd';
 
 export async function generateMetadata({
   params,
@@ -15,9 +17,26 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
   const dict = getDictionary(lang);
+  const isId = lang === 'id';
+
   return {
     title: dict.meta.aboutTitle,
     description: dict.meta.aboutDesc,
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/about`,
+      languages: {
+        'id-ID': `${SITE_URL}/id/about`,
+        'en-US': `${SITE_URL}/en/about`,
+        'x-default': `${SITE_URL}/id/about`,
+      },
+    },
+    openGraph: {
+      title: dict.meta.aboutTitle,
+      description: dict.meta.aboutDesc,
+      url: `${SITE_URL}/${lang}/about`,
+      type: 'website',
+      locale: isId ? 'id_ID' : 'en_US',
+    },
   };
 }
 
@@ -33,9 +52,17 @@ export default async function AboutPage({
 
   const validLang = lang as Locale;
   const dict = getDictionary(validLang);
+  const isId = validLang === 'id';
+
+  const breadcrumbs = [
+    { name: isId ? 'Beranda' : 'Home', url: `/${validLang}` },
+    { name: isId ? 'Tentang 3.SEC' : 'About 3.SEC', url: `/${validLang}/about` },
+  ];
 
   return (
-    <div className="py-12 sm:py-16 lg:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
+    <>
+      <JsonLd lang={validLang} breadcrumbs={breadcrumbs} includeBusinessInfo={false} />
+      <div className="py-12 sm:py-16 lg:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
       {/* 1. Header: Authoritative Editorial Opening */}
       <section className="space-y-8">
         <PageBreadcrumb
@@ -203,5 +230,6 @@ export default async function AboutPage({
         </div>
       </section>
     </div>
-  );
+  </>
+);
 }

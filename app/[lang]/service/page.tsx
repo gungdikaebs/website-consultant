@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/content/config';
 import PageBreadcrumb from '@/components/PageBreadcrumb';
+import JsonLd from '@/components/JsonLd';
 
 export async function generateMetadata({
   params,
@@ -14,9 +16,26 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
   const dict = getDictionary(lang);
+  const isId = lang === 'id';
+
   return {
     title: dict.meta.serviceTitle,
     description: dict.meta.serviceDesc,
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/service`,
+      languages: {
+        'id-ID': `${SITE_URL}/id/service`,
+        'en-US': `${SITE_URL}/en/service`,
+        'x-default': `${SITE_URL}/id/service`,
+      },
+    },
+    openGraph: {
+      title: dict.meta.serviceTitle,
+      description: dict.meta.serviceDesc,
+      url: `${SITE_URL}/${lang}/service`,
+      type: 'website',
+      locale: isId ? 'id_ID' : 'en_US',
+    },
   };
 }
 
@@ -33,9 +52,17 @@ export default async function ServicePage({
   const validLang = lang as Locale;
   const dict = getDictionary(validLang);
   const services = getServices(validLang);
+  const isId = validLang === 'id';
+
+  const breadcrumbs = [
+    { name: isId ? 'Beranda' : 'Home', url: `/${validLang}` },
+    { name: isId ? 'Layanan' : 'Services', url: `/${validLang}/service` },
+  ];
 
   return (
-    <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 py-12 sm:py-16 lg:py-20">
+    <>
+      <JsonLd lang={validLang} breadcrumbs={breadcrumbs} includeBusinessInfo={false} />
+      <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 py-12 sm:py-16 lg:py-20">
       {/* 1. Page Header & Quick Navigation with Image */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-8 sm:space-y-10">
         <PageBreadcrumb
@@ -225,5 +252,6 @@ export default async function ServicePage({
         </div>
       </section>
     </div>
-  );
+  </>
+);
 }

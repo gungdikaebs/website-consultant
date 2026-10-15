@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { isValidLocale, getDictionary, getServices } from '@/lib/content';
 import { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/content/config';
 import FAQAccordion from '@/components/FAQAccordion';
+import JsonLd from '@/components/JsonLd';
 
 export async function generateMetadata({
   params,
@@ -14,9 +16,26 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
   const dict = getDictionary(lang);
+  const isId = lang === 'id';
+
   return {
     title: dict.meta.homeTitle,
     description: dict.meta.homeDesc,
+    alternates: {
+      canonical: `${SITE_URL}/${lang}`,
+      languages: {
+        'id-ID': `${SITE_URL}/id`,
+        'en-US': `${SITE_URL}/en`,
+        'x-default': `${SITE_URL}/id`,
+      },
+    },
+    openGraph: {
+      title: dict.meta.homeTitle,
+      description: dict.meta.homeDesc,
+      url: `${SITE_URL}/${lang}`,
+      type: 'website',
+      locale: isId ? 'id_ID' : 'en_US',
+    },
   };
 }
 
@@ -103,7 +122,9 @@ export default async function HomePage({
   ];
 
   return (
-    <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 pb-20">
+    <>
+      <JsonLd lang={validLang} faqs={dict.home.faqs} includeBusinessInfo={false} />
+      <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32 pb-20">
       {/* 1. Hero Section: Refined Bali Regional Advisory Aesthetic */}
       <section className="relative pt-6 sm:pt-12 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-sky-50/50 via-[#FBFBF9] to-white">
         {/* Subtle Background Organic Lines */}
@@ -477,5 +498,6 @@ export default async function HomePage({
         </div>
       </section>
     </div>
-  );
+  </>
+);
 }
